@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_activated="true" android:drawable="@drawable/conf_open_hand_up"/>
+    <item android:drawable="@drawable/conf_open_cancel_hand_up"/>
+</selector>

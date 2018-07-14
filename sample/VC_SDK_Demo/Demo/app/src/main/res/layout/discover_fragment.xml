@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <com.huawei.opensdk.ec_sdk_demo.widget.BottomLineLayout
+        android:id="@+id/conference_entry_item"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp55"
+        app:lineColor="#e5e5e5"
+        app:linePaddingLeft="@dimen/dp70">
+
+        <ImageView android:id="@+id/conference_entry_iv"
+            android:layout_width="@dimen/dp25"
+            android:layout_height="@dimen/dp25"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp23"
+            android:layout_marginRight="@dimen/dp23"
+            android:scaleType="fitXY"
+            android:src="@drawable/discover_conference"/>
+
+        <TextView android:id="@+id/conference_entry_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/conference_entry_iv"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/conference_entry"
+            android:textColor="@color/textPrimary"
+            android:textSize="16sp"/>
+    </com.huawei.opensdk.ec_sdk_demo.widget.BottomLineLayout>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#e5e5e5"/>
+
+    <com.huawei.opensdk.ec_sdk_demo.widget.BottomLineLayout
+        android:id="@+id/eaddr_book_entry_item"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp55"
+        app:lineColor="#e5e5e5"
+        app:linePaddingLeft="@dimen/dp70">
+
+        <ImageView android:id="@+id/eaddr_book_entry_iv"
+            android:layout_width="@dimen/dp25"
+            android:layout_height="@dimen/dp25"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp23"
+            android:layout_marginRight="@dimen/dp23"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_contact"/>
+
+        <TextView android:id="@+id/eaddr_book_entry_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/eaddr_book_entry_iv"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/eaddr_book_entry"
+            android:textColor="@color/textPrimary"
+            android:textSize="16sp"/>
+    </com.huawei.opensdk.ec_sdk_demo.widget.BottomLineLayout>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#e5e5e5"/>
+
+</LinearLayout>

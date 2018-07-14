@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/eDialogStyle"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="@dimen/dp280"
+    android:paddingBottom="@dimen/dp30">
+
+    <TextView android:id="@+id/dialog_header"
+        style="@style/title_dialog_style"
+        android:text="@string/info"/>
+
+    <TextView android:id="@+id/dialog_leftbutton"
+        style="@style/content_dialog_style"
+        android:background="@drawable/bg_dialog_selector"
+        android:text="@string/prompt_over_conf"/>
+
+    <TextView android:id="@+id/dialog_rightbutton"
+        style="@style/content_dialog_style"
+        android:background="@drawable/bg_dialog_selector"
+        android:text="@string/prompt_exit_conf"/>
+
+    <TextView android:id="@+id/dialog_third_button"
+        style="@style/content_dialog_style"
+        android:background="@drawable/bg_dialog_selector"
+        android:text="@string/conference_video"
+        android:visibility="gone"/>
+
+    <TextView android:id="@+id/dialog_four_button"
+        style="@style/content_dialog_style"
+        android:background="@drawable/bg_dialog_selector"
+        android:text="@string/conference_video_data"
+        android:visibility="gone"/>
+
+</LinearLayout>

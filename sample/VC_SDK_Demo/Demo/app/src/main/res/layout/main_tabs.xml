@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="49dp"
+    android:background="@color/title_color"
+    android:baselineAligned="false"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <!--
+    <ImageView android:id="@+id/recent_tab"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_weight="1.0"
+        android:padding="11dp"
+        android:src="@drawable/recent_tab_logo"
+        android:tag="0"/>
+        -->
+
+    <ImageView android:id="@+id/call_tab"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_weight="1.0"
+        android:padding="11dp"
+        android:src="@drawable/call_tab_logo"
+        android:tag="0"/>
+
+    <ImageView android:id="@+id/contact_tab"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_weight="1.0"
+        android:padding="11dp"
+        android:src="@drawable/contact_tab_logo"
+        android:tag="1"/>
+
+    <ImageView android:id="@+id/discover_tab"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_weight="1.0"
+        android:padding="11dp"
+        android:src="@drawable/discover_tab_logo"
+        android:tag="2"/>
+</LinearLayout>

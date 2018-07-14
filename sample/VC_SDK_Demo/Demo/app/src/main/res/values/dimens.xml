@@ -1,0 +1,87 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_h">50dp</dimen>
+
+    <dimen name="heightItem">@dimen/dp60.5</dimen>
+    <dimen name="heightTab">@dimen/dp40</dimen>
+    <dimen name="heightPopupItem">@dimen/dp60</dimen>
+
+    <!-- distance of left, distance of right -->
+    <dimen name="settingGapLeft">@dimen/dp18</dimen>
+    <dimen name="settingGapRight">@dimen/dp18</dimen>
+
+    <!-- distance of top, distance of bottom -->
+    <dimen name="settingGapTop">@dimen/dp10</dimen>
+    <dimen name="settingGapBottom">@dimen/dp10</dimen>
+
+    <!-- setting distance of two sides -->
+    <dimen name="emptyWidth">@dimen/dp10</dimen>
+
+    <!-- setting title, such as "base setting" -->
+    <dimen name="settingTitleHeight">@dimen/dp32</dimen>
+    <dimen name="settingTitleSize">@dimen/sp14</dimen>
+
+    <!-- setting child item -->
+    <dimen name="settingItemHeight">46.7dp</dimen>
+    <dimen name="settingItemHeightMid">58dp</dimen>
+
+
+    <dimen name="circle_stoke_width">3.33dp</dimen>
+    <dimen name="circle_stoke_out">3.33dp</dimen>
+    <dimen name="umPicWidth">@dimen/dp120</dimen>
+    <dimen name="umPicMaxWidth">@dimen/dp173.5</dimen>
+    <dimen name="umPicHeight">@dimen/dp86</dimen>
+    <dimen name="umMinWidth">@dimen/dp74.5</dimen>
+    <dimen name="head_photo_height">90dp</dimen>
+    <dimen name="personal_setting_head_height">45dp</dimen>
+    <!-- divider line -->
+    <dimen name="dividerHeight">@dimen/dp0.3</dimen>
+
+    <!-- chat view -->
+    <dimen name="switch_btn_width">60dp</dimen>
+    <dimen name="menu_child_width">120dp</dimen>
+    <dimen name="menu_child_height">50dp</dimen>
+    <dimen name="multi_msg_padding">10dp</dimen>
+    <dimen name="multi_item_padding">8dp</dimen>
+
+    <dimen name="video_popup_item_height">45dp</dimen>
+
+    <dimen name="dial_edittext_size">32sp</dimen>
+    <!-- group zone -->
+    <dimen name="space_item_height">82dp</dimen>
+    <dimen name="space_item_img_height">60dp</dimen>
+    <dimen name="space_item_img_width">54dp</dimen>
+    <dimen name="space_item_left">10dp</dimen>
+    <dimen name="bmpWidth">22dp</dimen>
+    <dimen name="progressWidth">2dp</dimen>
+
+    <dimen name="ninewidth">260dp</dimen>
+    <dimen name="nine_gap">3dp</dimen>
+    <dimen name="textview_top_margin">2dp</dimen>
+
+    <dimen name="text_18">18dp</dimen>
+    <dimen name="text_20">20dp</dimen>
+
+    <!-- FloatingActionButton -->
+    <dimen name="fab_size_normal">@dimen/dp70</dimen>
+    <dimen name="fab_shadow_width_normal">@dimen/dp7</dimen>
+    <dimen name="fab_shadow_offset_normal">@dimen/dp4</dimen>
+
+    <dimen name="fab_size_mini">@dimen/dp50</dimen>
+    <dimen name="fab_shadow_width_mini">@dimen/dp5</dimen>
+    <dimen name="fab_shadow_offset_mini">@dimen/dp5</dimen>
+
+    <!--<dimen name="fab_icon_size">@dimen/dp24</dimen>-->
+    <!--<dimen name="fab_stroke_width">@dimen/dp1</dimen>-->
+    <!-- FloatingActionButton -->
+
+    <dimen name="drawerWidth">@dimen/dp285</dimen>
+    <dimen name="blogSelfSize">@dimen/dp174</dimen>
+    <dimen name="blogOtherSize">@dimen/dp168</dimen>
+    <dimen name="blogCircleSize">@dimen/dp200</dimen>
+
+    <dimen name="zoomDefaultSize">@dimen/dp200</dimen>
+    <dimen name="viewTouchSlop">@dimen/dp4</dimen>
+</resources>

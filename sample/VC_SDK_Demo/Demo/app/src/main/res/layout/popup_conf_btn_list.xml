@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/bwhite"
+    android:orientation="vertical">
+
+    <!--添加与会者-->
+    <LinearLayout android:id="@+id/add_attendee_ll"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="12dp"
+            android:src="@drawable/media_add_contact"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/add_contact"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ffffff"/>
+
+    <!--举手-->
+    <LinearLayout android:id="@+id/hand_up_ll"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/hand_up_iv"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="12dp"
+            android:src="@drawable/conf_hand_up"/>
+
+        <TextView
+            android:id="@+id/hand_up_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/conf_hand_up"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <!--<View android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:background="#ffffff"/>-->
+
+    <!--全场静音-->
+    <LinearLayout android:id="@+id/mute_all_ll"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="12dp"
+            android:src="@drawable/pop_icon_conf_mute"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/mute_full_conf"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <!--<View android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:background="#ffffff"/>-->
+
+    <!--取消全场静音-->
+    <LinearLayout android:id="@+id/cancel_mute_all_ll"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="12dp"
+            android:src="@drawable/pop_icon_conf_mute_off"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/cancel_mute_full_conf"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <!--<View android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:background="#ffffff"/>-->
+
+    <!--锁定会议-->
+    <LinearLayout android:id="@+id/lock_conf_ll"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="12dp"
+            android:src="@drawable/icon_lock"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/lock_conf"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <!--<View android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:background="#ffffff"/>-->
+
+    <!--取消锁定会议-->
+    <LinearLayout android:id="@+id/un_lock_conf_ll"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="12dp"
+            android:src="@drawable/icon_lock"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/unlock_conf"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <!--<View android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:background="#ffffff"/>-->
+
+    <!--申请主席-->
+    <LinearLayout android:id="@+id/request_chairman_ll"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/request_chairman_iv"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="12dp"
+            android:src="@drawable/request_chairman"/>
+
+        <TextView
+            android:id="@+id/request_chairman_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/conf_request_chairman"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ffffff"/>
+
+    <!--释放主席-->
+    <LinearLayout android:id="@+id/release_chairman_ll"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/release_chairman_iv"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="12dp"
+            android:src="@drawable/request_chairman"/>
+
+        <TextView
+            android:id="@+id/release_chairman_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/conf_release_chairman"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ffffff"/>
+
+</LinearLayout>

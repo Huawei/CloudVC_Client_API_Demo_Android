@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/title_color">
+
+        <ImageView
+            android:id="@+id/ldap_back"
+            android:padding="17.5dp"
+            android:src="@drawable/icon_back"
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bg_title_icon" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_title_icon"
+            android:id="@+id/ldap_keys"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@id/ldap_back"
+            android:paddingRight="6dp"
+            android:textColor="@android:color/white"
+            android:hint="@string/keyword"
+            android:maxEms="10"
+            android:maxLines="1"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="16sp" />
+
+        <ImageView android:id="@+id/ldap_find"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="16.5dp"
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            android:background="@drawable/bg_title_icon"
+            android:src="@drawable/nav_search_normal" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/enterprise_contacts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:dividerHeight="1px"
+        android:divider="#e5e5e5"
+        android:fadingEdge="none"
+        android:fadingEdgeLength="0dp"
+        android:orientation="vertical" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_below="@id/contact_list"
+        android:layout_height="1px"
+        android:background="#e5e5e5" />
+
+</LinearLayout>

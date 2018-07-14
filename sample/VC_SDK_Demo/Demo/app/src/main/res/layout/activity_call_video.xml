@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/video_call_area"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <include layout="@layout/video_call_main_view"/>
+
+    <include layout="@layout/media_main_btn"
+        android:layout_width="match_parent"
+        android:layout_height="53.34dp"
+        android:layout_alignParentBottom="true"/>
+
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="#333333">
+
+        <TextView android:id="@+id/call_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@string/number"
+            android:textColor="#999999"
+            android:textSize="16sp"/>
+
+        <TextView android:id="@+id/call_time"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:layout_marginRight="10dp"
+            android:singleLine="true"
+            android:text="@string/zero_begin_time"
+            android:textColor="#999999"
+            android:textSize="16sp"/>
+    </RelativeLayout>
+
+    <include layout="@layout/dial_panel"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/media_btn_group"/>
+</RelativeLayout>

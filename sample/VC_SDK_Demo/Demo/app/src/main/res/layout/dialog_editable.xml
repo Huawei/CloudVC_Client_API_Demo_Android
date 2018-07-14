@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/eDialogStyle"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView android:id="@+id/dialog_title"
+        style="@style/title_dialog_style"/>
+
+    <RelativeLayout android:id="@+id/RelativeLayout01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp7"
+        android:layout_marginLeft="@dimen/dp20"
+        android:layout_marginRight="@dimen/dp20"
+        android:layout_marginTop="@dimen/dp13"
+        android:layout_toLeftOf="@+id/btn_chat_send"
+        android:background="@drawable/chat_input_background_select"
+        android:paddingRight="@dimen/dp2">
+
+        <ImageView android:id="@+id/ivClearText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/dialog_edittext"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/dp6"
+            android:background="@drawable/icon_dialog_delete_selector"/>
+
+        <EditText android:id="@+id/dialog_edittext"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp6"
+            android:layout_toLeftOf="@+id/ivClearText"
+            android:background="@null"
+            android:gravity="left|center_vertical"
+            android:imeOptions="actionDone"
+            android:maxLines="1"
+            android:paddingBottom="@dimen/dp6"
+            android:singleLine="true"
+            android:textSize="@dimen/sp18"/>
+    </RelativeLayout>
+
+    <RelativeLayout android:id="@+id/dialog_button_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp60">
+
+        <TextView android:id="@+id/dialog_leftbutton"
+            style="@style/btn_dialog_style"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp5"
+            android:layout_toLeftOf="@+id/dialog_rightbutton"
+            android:text="@string/btn_cancel"/>
+
+        <TextView android:id="@+id/dialog_rightbutton"
+            style="@style/btn_dialog_style"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp15"
+            android:text="@string/btn_sure"/>
+    </RelativeLayout>
+</LinearLayout>

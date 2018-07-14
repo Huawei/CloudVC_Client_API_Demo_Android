@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/white"
+                android:orientation="vertical">
+
+    <include
+        android:id="@+id/media_scan_title"
+        layout="@layout/dial_title"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/media_scan_title">
+
+        <TextView
+            android:id="@+id/media_scan_download_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF00FF"
+            android:text="0%"
+            android:layout_centerInParent="true"/>
+
+        <ImageView
+            android:id="@+id/media_picture_scan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:minHeight="50dp"
+            android:minWidth="50dp"
+            android:visibility="gone"/>
+
+        <VideoView
+            android:id="@+id/media_video_scan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <EditText android:id="@+id/et_call_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:inputType="phone"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp"
+            android:background="@null"
+            android:maxLength="21"
+            android:singleLine="true"
+            android:textColor="#333333"
+            android:textSize="32sp"
+            android:hint="@string/input_call_number"/>
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

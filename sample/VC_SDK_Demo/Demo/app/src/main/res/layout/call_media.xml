@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <LinearLayout android:id="@+id/base_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <include layout="@layout/call_head_photo_lyt"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_above="@+id/call_option">
+
+        <LinearLayout android:id="@+id/hold_call"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_hold_normal"/>
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Hold Call"
+                android:textColor="#666666"
+                android:textSize="16sp"
+                android:id="@+id/hold_call_text"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/call_option"
+        android:layout_above="@+id/call_btns_area">
+
+        <LinearLayout android:id="@+id/mute_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView android:id="@+id/iv_mute"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/audio_bg_mute_transparent"/>
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/mute"
+                android:textColor="#666666"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/speaker_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView android:id="@+id/iv_speaker"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/audio_bg_loudhailer"/>
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/speaker"
+                android:textColor="#666666"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/upgrade_video_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/audio_bg_video"/>
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/video_call"
+                android:textColor="#666666"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/plate_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/audio_bg_dial_plate"/>
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/plate"
+                android:textColor="#666666"
+                android:textSize="16sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/call_btns_area"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <FrameLayout android:id="@+id/reject_area"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView android:id="@+id/reject_btn"
+                android:layout_width="73dp"
+                android:layout_height="73dp"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"
+                android:src="@drawable/audio_reject"/>
+        </FrameLayout>
+
+        <FrameLayout android:id="@+id/audio_accept_call_area"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone">
+
+            <ImageView android:id="@+id/audio_accept_call_btn"
+                android:layout_width="73dp"
+                android:layout_height="73dp"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"
+                android:src="@drawable/audio_accept"/>
+        </FrameLayout>
+
+        <FrameLayout android:id="@+id/video_accept_call_area"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone">
+
+            <ImageView android:id="@+id/video_accept_call_btn"
+                android:layout_width="73dp"
+                android:layout_height="73dp"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"
+                android:src="@drawable/video_accept"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <include layout="@layout/dial_panel"/>
+</RelativeLayout>

@@ -1,0 +1,3 @@
+include 'Demo:app'
+include ':Demo_Service:CallService', ':Demo_Service:LoginService', ':Demo_Service:CommonService', ':Demo_Service:ConferenceService', ':Demo_Service:ServiceMgr', 'Demo_Service:ContactService'
+include ':SDKWrapper'

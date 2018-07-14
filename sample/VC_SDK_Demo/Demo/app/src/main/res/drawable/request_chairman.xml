@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_activated="true" android:drawable="@drawable/conf_open_request_chairman"/>
+    <item android:drawable="@drawable/conf_open_release_chairman"/>
+</selector>

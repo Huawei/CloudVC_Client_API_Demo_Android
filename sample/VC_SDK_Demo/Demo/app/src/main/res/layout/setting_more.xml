@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/settingall"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/dial_bg_white"
+    android:orientation="vertical">
+
+    <include layout="@layout/dial_title"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/personal_head_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_item_selector"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="17.5dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="17.5dp">
+
+                    <TextView android:id="@+id/tv_head"
+                        style="@style/setting_text_info"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/self_head"
+                        android:textColor="@color/textPrimary"/>
+
+                    <com.huawei.opensdk.ec_sdk_demo.widget.RoundCornerPhotoView
+                        android:id="@+id/headImg"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_alignParentRight="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/default_head"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/personal_setting_divider_gray"/>
+
+                <!--<LinearLayout
+                    android:id="@+id/signature_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_item_selector"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:paddingBottom="22dp"
+                    android:paddingTop="22dp">
+
+                    <TextView
+                        android:id="@+id/signature_txt"
+                        style="@style/setting_text_info"
+                        android:layout_marginBottom="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:visibility="invisible"/>
+
+                    <TextView
+                        style="@style/setting_text_hint"
+                        android:text="@string/signature"/>
+                </LinearLayout>-->
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/personal_setting_divider_gray"/>
+
+                <LinearLayout
+                    android:id="@+id/status_setting_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_item_selector"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:paddingBottom="22dp"
+                    android:paddingTop="22dp">
+
+                    <TextView
+                        android:id="@+id/mystate_txt"
+                        style="@style/setting_text_info"
+                        android:text="@string/offline"/>
+
+                    <TextView
+                        android:id="@+id/mystate"
+                        style="@style/setting_text_hint"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/my_state"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/personal_setting_divider_gray"/>
+
+                <!--<RelativeLayout
+                    android:id="@+id/personal_info"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_item_selector"
+                    android:paddingBottom="22dp"
+                    android:paddingTop="22dp">
+
+                    <TextView
+                        android:id="@+id/txt_personal_info"
+                        style="@style/setting_text_info"
+                        android:text="@string/personal_info"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/personal_setting_divider_gray"/>-->
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

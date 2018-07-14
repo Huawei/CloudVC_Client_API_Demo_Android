@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="pullToRefresh">
+        <!-- Style of Animation should be used displayed when pulling. -->
+        <attr name="ptrAnimationStyle">
+            <flag name="rotate" value="0x0"/>
+            <flag name="flip" value="0x1"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="GifMoviewView">
+        <attr name="gif" format="reference"/>
+        <attr name="paused" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomTheme">
+        <attr name="gifMoviewViewStyle" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="RoundProgressBar">
+        <attr name="bitmap" format="reference"/>
+        <attr name="roundColor" format="color"/>
+        <attr name="roundProgressColor" format="color"/>
+        <attr name="roundWidth" format="dimension"/>
+        <attr name="bmpWidth" format="dimension"/>
+        <attr name="max" format="integer"/>
+        <attr name="roundRadiu" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="BottomLineLayout">
+        <attr name="showLine" format="boolean"/>
+        <attr name="lineSize" format="dimension"/>
+        <attr name="lineColor" format="color"/>
+
+        <attr name="linePaddingLeft" format="dimension"/>
+        <attr name="linePaddingRight" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="CrumbView">
+        <attr name="innerTextSize" format="dimension"/>
+        <attr name="clickableTextColor" format="color"/>
+        <attr name="plainTextColor" format="color"/>
+    </declare-styleable>
+</resources>

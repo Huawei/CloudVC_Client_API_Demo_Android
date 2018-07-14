@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/conf_share_root_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <FrameLayout
+        android:id="@+id/conf_share_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:color/darker_gray" >
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/conf_video_small_logo"
+        android:layout_width="134.67dp"
+        android:layout_height="101.33dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="70dp"
+        android:layout_marginRight="6.6dp"
+        android:background="#666666">
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/hide_video_view"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:visibility="visible"/>
+
+    <FrameLayout
+        android:id="@+id/local_video_hide"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/conf_video_small_logo"
+        android:layout_marginBottom="137.33dp"
+        android:layout_marginRight="107.27dip"
+        android:background="@drawable/selector_btn_video_window_close">
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/local_video_hide_cancel"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="60dp"
+        android:layout_marginRight="6.6dip"
+        android:background="@drawable/selector_btn_video_window_open"
+        android:visibility="gone" />
+</RelativeLayout>

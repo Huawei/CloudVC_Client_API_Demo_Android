@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/dial"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <ListView
+        android:id="@+id/call_record_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:cacheColorHint="@android:color/transparent"
+        android:dividerHeight="1px"
+        android:divider="#e5e5e5"
+        android:fadingEdge="none"
+        android:fadingEdgeLength="0dp"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/dp3"
+        android:layout_alignParentTop="true">
+    </ListView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_below="@id/call_record_list"
+        android:layout_height="1px"
+        android:background="#e5e5e5" />
+
+    <!--
+        <FrameLayout android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ListView android:id="@+id/contacts_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:cacheColorHint="@android:color/transparent"
+                android:divider="@null"
+                android:fadingEdge="none"
+                android:fadingEdgeLength="0dp"
+                android:orientation="vertical"/>
+        </FrameLayout>-->
+
+    <ImageView android:id="@+id/show_dial_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+        android:src="@drawable/icon_calling_focus"/>
+
+    <LinearLayout android:id="@+id/dial_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:clickable="true"
+        android:orientation="vertical">
+
+        <ImageView android:id="@+id/dial_shadow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/dial_bg"/>
+
+        <include layout="@layout/dial_panel"/>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.huawei.opensdk.ec_sdk_demo.widget.BottomLineLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/heightItem"
+    android:background="@drawable/bg_item_transparent_selector"
+    android:paddingRight="@dimen/dp30"
+    app:lineColor="#e5e5e5"
+    app:linePaddingLeft="@dimen/dp70"
+    app:linePaddingRight="@dimen/dp18"
+    android:id="@+id/contact_item_line_layout">
+
+    <ImageView android:id="@+id/head_iv"
+        style="@style/head_style"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:src="@drawable/default_head"/>
+
+    <ImageView android:id="@+id/state_iv"
+        style="@style/state_style"
+        android:layout_alignBottom="@id/head_iv"
+        android:layout_alignRight="@id/head_iv"
+        android:background="@drawable/contact_state_bg"
+        android:src="@drawable/state_offline"/>
+
+    <ImageView android:id="@+id/relation_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:padding="@dimen/dp10"
+        android:scaleType="center"
+        android:src="@drawable/call_btn_selector"
+        android:visibility="gone"/>
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/relation_iv"
+        android:layout_toRightOf="@id/head_iv"
+        android:orientation="vertical">
+
+        <TextView android:id="@+id/name_tv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp22"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:textColor="@color/textPrimary"
+            android:textSize="@dimen/sp16"/>
+
+        <TextView android:id="@+id/info_tv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp18"
+            android:ellipsize="end"
+            android:gravity="bottom"
+            android:singleLine="true"
+            android:textColor="@color/textSecondary"
+            android:textSize="@dimen/sp12"/>
+    </LinearLayout>
+</com.huawei.opensdk.ec_sdk_demo.widget.BottomLineLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout android:id="@+id/LLDateView"
+        android:layout_width="305.3dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_popup_window_round"
+        android:orientation="vertical">
+        <!-- tittle -->
+        <LinearLayout android:id="@+id/LLTittle"
+            android:layout_width="298.7dp"
+            android:layout_height="41.3dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView android:id="@+id/TittleBar"
+                      style="@style/title_dialog_style"
+                android:text="@string/begin_date"
+                android:textColor="@color/textPrimary"/>
+        </LinearLayout>
+
+        <!-- 时间内容 -->
+        <LinearLayout android:id="@+id/LLTime"
+            android:layout_width="293.3dp"
+            android:layout_height="201.7dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <com.huawei.opensdk.ec_sdk_demo.widget.calendar.WheelView
+                android:id="@+id/hours"
+                android:layout_width="96.4dp"
+                android:layout_height="201.7dp"/>
+
+            <com.huawei.opensdk.ec_sdk_demo.widget.calendar.WheelView
+                android:id="@+id/mins"
+                android:layout_width="96.4dip"
+                android:layout_height="201.7dip"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/dialog_button_view"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <TextView
+                android:id="@+id/dialog_leftbutton"
+                style="@style/btn_dialog_style"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/dialog_rightbutton"
+                android:layout_marginRight="20dp"
+
+                android:text="@string/btn_cancel"/>
+
+            <TextView
+                android:id="@+id/dialog_rightbutton"
+                style="@style/btn_dialog_style"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+
+                android:text="@string/btn_sure"/>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

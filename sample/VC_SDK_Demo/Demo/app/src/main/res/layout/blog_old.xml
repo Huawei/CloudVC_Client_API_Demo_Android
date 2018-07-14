@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@+id/blog_area"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    android:background="@drawable/blog_bg_other"
+    android:clickable="false">
+
+    <!-- 扩充点击范围 -->
+    <RelativeLayout
+        android:id="@+id/group_image_name_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingBottom="35dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="35dp">
+
+        <ImageView
+            android:id="@+id/blog_head_iv"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/self_icon_bg"
+            android:src="@drawable/default_head" />
+
+        <ImageView
+            android:id="@+id/blog_state_iv"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_alignBottom="@id/blog_head_iv"
+            android:layout_alignRight="@id/blog_head_iv"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="2dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/state_offline"
+            android:visibility="invisible"/>
+
+        <LinearLayout
+            android:id="@+id/name_sex_area"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_alignTop="@id/blog_head_iv"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:layout_toRightOf="@id/blog_head_iv"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/blog_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:gravity="center_vertical"
+                android:paddingTop="@dimen/dp3"
+                android:text="@string/name_label"
+                android:textColor="@android:color/white"
+                android:textSize="21sp" />
+
+            <!--Sip Number-->
+            <TextView
+                android:id="@+id/blog_number_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginRight="15dp"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:focusable="true"
+                android:scrollHorizontally="true"
+                android:focusableInTouchMode="true"
+                android:text="Number"
+                android:paddingBottom="@dimen/dp3"
+                android:textColor="@android:color/white"
+                android:textSize="21sp"
+                android:layout_below="@+id/name_sex_area" />
+
+            <!--联系人签名-->
+            <TextView
+                android:id="@+id/contact_signature_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/blog_head_iv"
+                android:layout_marginRight="15dp"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="@string/signature"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+</FrameLayout>

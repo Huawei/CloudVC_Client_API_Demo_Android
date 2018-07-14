@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">CallSDK</string>
+    <string name="end_call">End Call</string>
+    <string name="proxyServer_not_null">Please enter the proxy server address</string>
+    <string name="regServer_not_null">Please enter the register server address</string>
+    <string name="account_information_not_empty">Please enter your account number or password</string>
+
+    <string name="logining_msg">Login...</string>
+    <string name="tup_conference">Conference</string>
+    <string name="tup_call">Call</string>
+    <string name="add_attendee_fail">Add attendee fail</string>
+    <string name="add_attendee_success">Add attendee success</string>
+    <string name="create_conf_success">Create conference success</string>
+    <string name="create_conf_fail">Create conference fail</string>
+    <string name="delete_attendee">Delete</string>
+    <string name="delete_attendee_success">Delete attendees success</string>
+    <string name="accept">Accept</string>
+    <string name="refuse">Refuse</string>
+    <string name="tup_cancelled">Call canceled</string>
+    <string name="inaccessible">Unreachable number</string>
+    <string name="oppositebusying">The other party is busy</string>
+    <string name="bereject">Call rejected</string>
+    <string name="tup_callfailed">Call end</string>
+    <string name="voipstatusnoreply">The other party does not answer</string>
+    <string name="voipstatusnocnt">Cannot connect now</string>
+    <string name="errorcall">Call failed</string>
+</resources>

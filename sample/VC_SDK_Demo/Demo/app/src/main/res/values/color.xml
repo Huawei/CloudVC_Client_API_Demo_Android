@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="title_color">#387fe8</color>
+    <color name="theme_color_focus">#407fe8</color>
+
+    <color name="background_main">#838a91</color>
+    <color name="soundwave">#d9e3ed</color>
+    <drawable name="halftranslucent">#70000000</drawable>
+    <drawable name="black">#f000</drawable>
+    <drawable name="translucent">#00000000</drawable>
+    <drawable name="login_txt_bg">#f3f2ef</drawable>
+    <drawable name="item_background_drawable">#f2f4f5</drawable>
+    <drawable name="white">#ffffff</drawable>
+    <color name="half_transparent">#70000000</color>
+
+    <color name="chat_bg">#FFFFFF</color>
+    <color name="meeting_bg">#ffffff</color>
+    <color name="cwhite">#ccc</color>
+    <color name="bg_common">#eaebec</color>
+    <color name="bwhite">#FFb5b5b5</color>
+    <color name="bgcolor">#FF79B30F</color>
+    <color name="gray">#ff4a4a4a</color>
+    <color name="black">#000000</color>
+    <color name="chatcolor">#73797B</color>
+    <color name="imtextowner">#0f8f06</color>
+    <color name="imextother">#26abbf</color>
+    <color name="settingColor">#4a4a4a</color>
+    <color name="bg">#353737</color>
+    <color name="bigbg">#FF464748</color>
+    <color name="imothertitle">#ff0f8f06</color>
+    <color name="imminetitle">#ff26abbf</color>
+    <color name="imbody">#ff4a4a4a</color>
+    <color name="red">#ffff0000</color>
+    <color name="netcolor">#FFbebebe</color>
+    <color name="textunderline">#3579ce</color>
+    <color name="meetingbg">#ffeeeeee</color>
+    <color name="item_meeting">#ff487207</color>
+    <color name="item_member">#ff333333</color>
+    <color name="bg_dialog_window">#00333333</color>
+    <color name="item_click">#ff57b7dc</color>
+    <color name="item_background">#f2f4f5</color>
+    <color name="text_black">#373737</color>
+    <color name="text_light_black">#a1a1a1</color>
+    <color name="text_bg_gray">#f8f7f8</color>
+
+    <color name="text_chat_gray">#737373</color>
+    <color name="text_chat_history">#28b0e2</color>
+    <color name="dial_num">#000000</color>
+    <color name="dial_letter">#737373</color>
+    <color name="search_result_item_one">#ffffffff</color>
+    <color name="search_result_item_two">#fff3f3f3</color>
+    <color name="dial_bg_gray">#cccccc</color>
+    <color name="dial_contact_text_bg">#278BF0</color>
+    <color name="transparent">#00000000</color>
+    <color name="text_az">#F999</color>
+    <color name="az_text_pressed">#FF48C9FF</color>
+    <color name="chat_item_tag">#FF999999</color>
+    <color name="chat_item_bg_a">#fff2f4f5</color>
+    <color name="chat_item_bg_b">#ededed</color>
+    <color name="chat_item_content">#262626</color>
+    <color name="common_blue">#3c96da</color>
+    <color name="label_background">#DBDBDB</color>
+
+    <color name="talking_bg_normal">#DEF2D8</color>
+    <color name="talking_bg_click">#c4d9c2</color>
+    <color name="main_conf_item_red">#9fd519</color>
+    <color name="main_conf_item_red_click">#8fbf16</color>
+    <color name="main_conf_item_gray">#868686</color>
+    <color name="main_conf_item_gray_click">#727272</color>
+    <color name="main_conf_item_black">#4d4d4d</color>
+    <color name="main_conf_item_black_click">#363636</color>
+    <color name="bulletin_item_bg">#f2f4f5</color>
+    <color name="more_sign_color">#f888</color>
+    <color name="conf_manager_bg">#e0e0e0</color>
+    <color name="team_item_bg_press">#42535b</color>
+    <color name="welcome_accountinfo_text">#cccccc</color>
+    <color name="chat_word_cout">#f57e6b</color>
+
+    <color name="video_bg">#FFFF</color>
+    <color name="title_video">#50000000</color>
+    <!-- xuweijuan -->
+    <color name="conf_manager_list_line">#545454</color>
+    <color name="conf_end_list_txt">#444444</color>
+
+    <color name="sketch_font_background">#00FFFFFF</color>
+    <color name="sketch_color_black">#000000</color>
+    <color name="sketch_color_purple">#9E0BEA</color>
+    <color name="sketch_color_blue">#100BEA</color>
+    <color name="sketch_color_skyblue">#0BAEEA</color>
+    <color name="sketch_color_green">#64EA0B</color>
+    <color name="sketch_color_yellow">#EAB80B</color>
+    <color name="sketch_color_red">#EA3C0B</color>
+    <color name="message_pressed">#e5e5e5</color>
+    <color name="log_pressed">#d9dbdc</color>
+
+    <color name="white">#ffFFFFFF</color>
+    <color name="atColor">#ff3b2f</color>
+
+    <color name="primary">#227CD1</color>
+    <color name="text_receive">#34ae00</color>
+    <color name="secondary">#628DC7</color>
+    <color name="textThirdly">#666666</color>
+    <color name="textSecondary">#999999</color>
+    <color name="textPrimary">#333333</color>
+    <color name="textTab">#5B9A28</color>
+    <color name="chat_red">#f53f0c</color>
+    <color name="textRed">#fd3925</color>
+    <color name="callRed">#ff3b30</color>
+    <color name="textLogin">#176980</color>
+    <color name="textLoginDisable">#80ffffff</color>
+    <color name="dialog_button_color">#33b392</color>
+
+    <color name="chat_background">#f2f2f2</color>
+    <color name="chat_background_transparent">#00f2f2f2</color>
+
+    <!--zhangMinLiang-->
+    <color name="dial_bg_white">#f5f5f5</color>
+    <!--<color name="divider">#D4D9DD</color>-->
+    <color name="divider">#cccccc</color>
+    <color name="detail_background">#e9eff4</color>
+    <!--topic reply send button backgroud-->
+    <color name="no_normal">#cdcdcd</color>
+    <color name="no_press">#cccccc</color>
+    <color name="has_normal">#00ff00</color>
+    <color name="has_press">#009900</color>
+    <color name="topicTime">#b9b9b9</color>
+    <color name="line">#ebebf0</color>
+
+    <color name="progressbar_backg">#d3d6da</color>
+    <color name="progressbar_diy">#3595df</color>
+
+    <color name="progressbar_green">#35AE00</color>
+    <color name="progressbar_green_pause">#A3D48E</color>
+    <color name="progressbar_blue">#227CD1</color>
+    <color name="progressbar_blue_pause">#9CC0E2</color>
+    <color name="space_text_gray">#bbbbbb</color>
+
+    <color name="textcolor_item_date">#b7b7b7</color>
+    <color name="devider">#ebebeb</color>
+    <color name="textcolor_item_first">#444444</color>
+    <color name="textcolor_item_second">#9c9c9c</color>
+    <color name="listview_devider">#e6e6e6</color>
+
+    <color name="button_1_normal_background">#91b1fb</color>
+    <color name="button_1_selected_background">#9CC0E2</color>
+    <color name="button_1_focused_background">#91b1fb</color>
+
+    <color name="base_gray_green">#56d292</color>
+    <color name="base_black_gray">#666666</color>
+    <color name="base_gray">#363636</color>
+    <color name="tab_message">#67da9f</color>
+    <color name="chb_text_color">#ff909090</color>
+    <color name="base_black_blue">#5f97fd</color>
+    <color name="no_data_white">#f1f5f8</color>
+
+    <color name="drawer_focus">#f7f7f9</color>
+
+    <color name="design_fab_shadow_end_color">@android:color/transparent</color>
+    <color name="design_fab_shadow_mid_color">#14000000</color>
+    <color name="design_fab_shadow_start_color">#44000000</color>
+    <color name="design_fab_stroke_end_inner_color">#0A000000</color>
+    <color name="design_fab_stroke_end_outer_color">#0F000000</color>
+    <color name="design_fab_stroke_top_inner_color">#1AFFFFFF</color>
+    <color name="design_fab_stroke_top_outer_color">#2EFFFFFF</color>
+
+    <color name="personal_setting_divider_gray">#DCDCDC</color>
+
+    <color name="bg_indicator_point_normal">#D8D8D8</color>
+    <color name="bg_indicator_point_selected">#A6A6A6</color>
+
+</resources>

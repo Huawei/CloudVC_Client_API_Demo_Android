@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/LLDateView"
+              android:orientation="vertical"
+              android:layout_width="305.3dp"
+              android:layout_height="wrap_content"
+              android:background="@drawable/bg_popup_window_round"
+        >
+    <!--android:layout_height="320dp"-->
+    <!-- tittle -->
+    <LinearLayout
+            android:id="@+id/LLTittle"
+            android:orientation="vertical"
+            android:layout_width="298.7dp"
+            android:layout_height="41.3dp"
+            android:gravity="center_vertical"
+            >
+        <TextView
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:id="@+id/TittleBar"
+                android:text="@string/begin_date"
+                android:textColor="@color/textPrimary"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        <!--android:textSize="18dp"-->
+    </LinearLayout>
+
+    <!-- 日历内容 -->
+    <LinearLayout
+            android:id="@+id/LLCalendar"
+            android:orientation="horizontal"
+            android:layout_width="293.3dp"
+            android:layout_height="200.7dp"
+            android:gravity="center_horizontal"
+            >
+
+        <com.huawei.opensdk.ec_sdk_demo.widget.calendar.WheelView
+                android:id="@+id/years"
+                android:layout_width="80.4dp"
+                android:layout_height="200.7dp"
+                />
+
+        <com.huawei.opensdk.ec_sdk_demo.widget.calendar.WheelView
+                android:id="@+id/months"
+                android:layout_width="80.4dp"
+                android:layout_height="200.7dp"/>
+
+        <com.huawei.opensdk.ec_sdk_demo.widget.calendar.WheelView
+                android:id="@+id/days"
+                android:layout_width="80.4dp"
+                android:layout_height="200.7dp"
+                />
+    </LinearLayout>
+    <!-- 底部 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/dialog_button_view">
+
+        <TextView
+            android:id="@+id/dialog_leftbutton"
+            style="@style/btn_dialog_style"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/dialog_rightbutton"
+            android:layout_marginRight="20dp"
+
+            android:text="@string/btn_cancel"/>
+
+        <TextView
+            android:id="@+id/dialog_rightbutton"
+            style="@style/btn_dialog_style"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+
+            android:text="@string/btn_sure"/>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/eDialogStyle"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView android:id="@+id/dialog_title"
+        style="@style/title_dialog_style"
+        android:text="@string/info"/>
+
+    <TextView android:id="@+id/dialog_message"
+        style="@style/content_dialog_style"
+        android:paddingTop="@dimen/dp0"/>
+
+    <RelativeLayout android:id="@+id/dialog_button_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp60">
+
+        <TextView android:id="@+id/dialog_single_button"
+            style="@style/btn_dialog_style"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp15"
+            android:text="@string/btn_sure"/>
+    </RelativeLayout>
+</LinearLayout>

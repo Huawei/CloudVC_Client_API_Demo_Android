@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:id="@+id/call_record_list_relative"
+        android:layout_marginLeft="3sp"
+        android:layout_marginRight="4sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="3sp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/call_record_list_image"
+            android:layout_centerInParent="true"
+            android:padding="5dp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/call_record_list_linear"
+        android:layout_marginTop="3sp"
+        android:layout_width="100sp"
+        android:layout_height="50sp"
+        android:layout_toRightOf="@+id/call_record_list_relative"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="22sp"
+            android:id="@+id/call_record_list_name"
+            android:layout_marginTop="5sp"
+            android:gravity="center_vertical"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:id="@+id/call_record_list_number"
+            android:layout_width="match_parent"
+            android:layout_height="18sp"
+            android:gravity="bottom"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50sp"
+        android:id="@+id/call_record_list_audio_video"
+        android:layout_toRightOf="@+id/call_record_list_linear"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp10"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_width="10sp"
+        android:layout_height="50sp"
+        android:gravity="center"
+        android:id="@+id/call_record_list_id"
+        android:layout_toRightOf="@+id/call_record_list_audio_video"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/call_record_list_time"
+        android:layout_width="wrap_content"
+        android:layout_height="50sp"
+        android:gravity="center"
+        android:textSize="17dp"
+        android:textColor="#ff4a4a4a"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp15" />
+
+</RelativeLayout>

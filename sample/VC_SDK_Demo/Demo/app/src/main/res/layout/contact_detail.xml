@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/detail_area"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/detail_background">
+
+    <com.huawei.widget.LScrollView android:id="@+id/detail_sv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fadingEdge="none"
+        android:scrollbars="none"
+        android:layout_below="@+id/include"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/blog_old"/>
+
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/blog_area"
+                android:orientation="vertical">
+
+                <!--基本信息-->
+                <LinearLayout android:id="@+id/detail_container01_layout"
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/blog_area"
+                    android:orientation="vertical">
+
+                    <!--上面的留白-->
+                    <View android:id="@+id/space_15"
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"
+                        android:background="@color/white"/>
+
+                    <!--第一部分，账号 部门-->
+                    <FrameLayout android:id="@+id/info_area_01"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp">
+
+                        <!--具体内容-->
+                        <LinearLayout android:id="@+id/detail_container01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <!--账号-->
+                            <LinearLayout android:id="@+id/detail_Item_layout1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingBottom="10dp"
+                                android:paddingLeft="95dp"
+                                android:paddingTop="10dp">
+                                <TextView android:id="@+id/detail_content_text1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="50dp"
+                                    android:clickable="false"
+                                    android:text="0755-0123456789"
+                                    android:textColor="@color/textPrimary"
+                                    android:textSize="15.5sp"/>
+                                <TextView android:id="@+id/detail_content_name_text1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/account"
+                                    android:textColor="@color/textSecondary"
+                                    android:textSize="12sp"
+                                    android:layout_marginTop="@dimen/dp10"/>
+                            </LinearLayout>
+
+                            <!--部门-->
+                            <LinearLayout android:id="@+id/detail_Item_layout2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingBottom="10dp"
+                                android:paddingLeft="95dp"
+                                android:paddingTop="10dp">
+                                <TextView android:id="@+id/detail_content_text2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="50dp"
+                                    android:clickable="false"
+                                    android:text="0755-0123456789"
+                                    android:textColor="@color/textPrimary"
+                                    android:textSize="15.5sp"/>
+                                <TextView android:id="@+id/detail_content_name_text2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/department"
+                                    android:textColor="@color/textSecondary"
+                                    android:textSize="12sp"
+                                    android:layout_marginTop="@dimen/dp10"/>
+                            </LinearLayout>
+
+                            <!--职务-->
+                            <LinearLayout android:id="@+id/detail_Item_layout3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingBottom="10dp"
+                                android:paddingLeft="95dp"
+                                android:paddingTop="10dp">
+                                <TextView android:id="@+id/detail_content_text3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="50dp"
+                                    android:clickable="false"
+                                    android:text="0755-0123456789"
+                                    android:textColor="@color/textPrimary"
+                                    android:textSize="15.5sp"/>
+                                <TextView android:id="@+id/detail_content_name_text3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/post"
+                                    android:textColor="@color/textSecondary"
+                                    android:textSize="12sp"
+                                    android:layout_marginTop="@dimen/dp10"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!--个人信息图标-->
+                        <ImageView android:layout_width="19dp"
+                            android:layout_height="19dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="18dp"
+                            android:layout_marginTop="20dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/contact_detail_basic_info"/>
+
+                    </FrameLayout>
+
+                    <include layout="@layout/divide_double"/>
+                </LinearLayout>
+
+                <!-- 电话号码列表 -->
+                <LinearLayout android:id="@+id/numbers_area_outer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--块之间的分割块-->
+                    <View android:layout_width="match_parent"
+                        android:layout_height="15dp"
+                        android:background="@color/white"/>
+
+                    <FrameLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_item_selector"
+                        android:minHeight="40dp">
+
+                        <!-- 所有的电话号码 -->
+                        <LinearLayout android:id="@+id/numbers_area"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:orientation="vertical">
+                            <!--软终端电话-->
+                            <LinearLayout android:id="@+id/call_Item_layout1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingBottom="10dp"
+                                android:paddingLeft="95dp"
+                                android:paddingTop="10dp">
+                                <TextView android:id="@+id/call_content_text1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="50dp"
+                                    android:clickable="false"
+                                    android:text="0755-0123456789"
+                                    android:textColor="@color/textPrimary"
+                                    android:textSize="15.5sp"/>
+                                <TextView android:id="@+id/call_content_name_text1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/user_number"
+                                    android:textColor="@color/textSecondary"
+                                    android:textSize="12sp"
+                                    android:layout_marginTop="@dimen/dp10"/>
+                            </LinearLayout>
+
+                            <!--移动电话-->
+                            <LinearLayout android:id="@+id/call_Item_layout2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingBottom="10dp"
+                                android:paddingLeft="95dp"
+                                android:paddingTop="10dp">
+                                <TextView android:id="@+id/call_content_text2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="50dp"
+                                    android:clickable="false"
+                                    android:text="0755-0123456789"
+                                    android:textColor="@color/textPrimary"
+                                    android:textSize="15.5sp"/>
+                                <TextView android:id="@+id/call_content_name_text2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/phone_mobile"
+                                    android:textColor="@color/textSecondary"
+                                    android:textSize="12sp"
+                                    android:layout_marginTop="@dimen/dp10"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- 电话号码图标 -->
+                        <ImageView android:layout_width="19dp"
+                            android:layout_height="19dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="18dp"
+                            android:layout_marginTop="15dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/contact_detail_dial_color"/>
+                    </FrameLayout>
+
+                    <include layout="@layout/divide_double"/>
+                </LinearLayout>
+
+                <!-- 视频电话号码列表 -->
+                <LinearLayout android:id="@+id/video_numbers_area_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--块之间的分割块-->
+                    <View android:layout_width="match_parent"
+                          android:layout_height="15dp"
+                          android:background="@color/white"/>
+
+                    <FrameLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_item_selector"
+                        android:minHeight="40dp">
+
+                        <!-- 所有的电话号码 -->
+                        <LinearLayout android:id="@+id/video_numbers_area"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:orientation="vertical">
+                            <!--软终端电话-->
+                            <LinearLayout android:id="@+id/video_Item_layout1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingBottom="10dp"
+                                android:paddingLeft="95dp"
+                                android:paddingTop="10dp">
+                                <TextView android:id="@+id/video_content_text1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="50dp"
+                                    android:clickable="false"
+                                    android:text="0755-0123456789"
+                                    android:textColor="@color/textPrimary"
+                                    android:textSize="15.5sp"/>
+                                <TextView android:id="@+id/video_content_name_text1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/user_number"
+                                    android:textColor="@color/textSecondary"
+                                    android:textSize="12sp"
+                                    android:layout_marginTop="@dimen/dp10"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- 视频电话号码图标 -->
+                        <ImageView android:layout_width="19dp"
+                            android:layout_height="19dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="18dp"
+                            android:layout_marginTop="15dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/contact_detail_video"/>
+                    </FrameLayout>
+
+                    <include layout="@layout/divide_double"/>
+                </LinearLayout>
+
+
+                <!-- 第 2 栏内容 电子邮件，地址，邮编-->
+                <LinearLayout android:id="@+id/detail_container02"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_item_selector"
+                    android:orientation="vertical"
+                    android:paddingTop="10dp">
+                    <!--电子邮件-->
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <!-- 左侧图标 -->
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="15dp"
+                            android:clickable="false"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/contact_detail_mailbox"/>
+                        <LinearLayout android:id="@+id/email_Item_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="45dp"
+                            android:paddingTop="10dp">
+                            <TextView android:id="@+id/email_content_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="50dp"
+                                android:clickable="false"
+                                android:text="0755-0123456789"
+                                android:textColor="@color/textPrimary"
+                                android:textSize="15.5sp"/>
+                            <TextView android:id="@+id/email_content_name_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/e_mail"
+                                android:textColor="@color/textSecondary"
+                                android:textSize="12sp"
+                                android:layout_marginTop="@dimen/dp10"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!--地址-->
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <!-- 左侧图标 -->
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="15dp"
+                            android:clickable="false"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/contact_detail_location"/>
+                        <LinearLayout android:id="@+id/location_Item_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="45dp"
+                            android:paddingTop="10dp">
+                            <TextView android:id="@+id/location_content_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="50dp"
+                                android:clickable="false"
+                                android:text="0755-0123456789"
+                                android:textColor="@color/textPrimary"
+                                android:textSize="15.5sp"/>
+                            <TextView android:id="@+id/location_content_name_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/address"
+                                android:textColor="@color/textSecondary"
+                                android:textSize="12sp"
+                                android:layout_marginTop="@dimen/dp10"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!--传真-->
+                    <LinearLayout android:id="@+id/fax_Item_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="95dp"
+                        android:paddingTop="10dp">
+                        <TextView android:id="@+id/fax_content_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="50dp"
+                            android:clickable="false"
+                            android:text="0755-0123456789"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="15.5sp"/>
+                        <TextView android:id="@+id/fax_content_name_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/phone_fax"
+                            android:textColor="@color/textSecondary"
+                            android:textSize="12sp"
+                            android:layout_marginTop="@dimen/dp10"/>
+                    </LinearLayout>
+
+                    <!--邮编-->
+                    <LinearLayout android:id="@+id/zip_Item_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="95dp"
+                        android:paddingTop="10dp">
+                        <TextView android:id="@+id/zip_content_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="50dp"
+                            android:clickable="false"
+                            android:text="0755-0123456789"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="15.5sp"/>
+                        <TextView android:id="@+id/zip_content_name_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/zip_code"
+                            android:textColor="@color/textSecondary"
+                            android:textSize="12sp"
+                            android:layout_marginTop="@dimen/dp10"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- 分组信息 -->
+                <RelativeLayout android:id="@+id/team_info_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_item_selector"
+                    android:minHeight="75dp">
+
+                    <LinearLayout
+                        android:id="@+id/ListView01"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_item_selector"
+                        android:orientation="vertical">
+                        <!-- -->
+                    </LinearLayout>
+
+                    <!-- 分组的图标 -->
+                    <ImageView
+                        android:layout_width="19dp"
+                        android:layout_height="19dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginTop="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/contact_detail_group_info"/>
+                </RelativeLayout>
+
+                <!---->
+                <LinearLayout android:id="@+id/bottom_buttons_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:orientation="vertical">
+
+                    <!--底部线-->
+                    <View android:layout_width="fill_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#e5e5e5"/>
+                    <LinearLayout android:id="@+id/delete_friend_layout"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="vertical">
+                        <!--删除联系按钮-->
+                        <Button android:id="@+id/deletecontact"
+                            android:layout_width="fill_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/bg_item_selector"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:singleLine="true"
+                            android:textColor="@color/primary"
+                            android:textSize="15.5sp"/>
+
+                        <!-- 底部线 -->
+                        <View android:layout_width="fill_parent"
+                            android:layout_height="0.5dp"
+                            android:background="#e5e5e5"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 进入个人聊天界面-->
+            <ImageView android:id="@+id/enter_chat"
+                style="@style/chatBtnStyle"
+                android:layout_below="@id/blog_area"/>
+        </RelativeLayout>
+    </com.huawei.widget.LScrollView>
+
+    <include layout="@layout/title_fluent"
+        android:id="@+id/include" />
+</RelativeLayout>

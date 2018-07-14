@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <include layout="@layout/dial_title"/>
+
+    <RelativeLayout
+        android:id="@+id/contact_info_relative"
+        android:layout_below="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp210">
+
+        <ImageView
+            android:id="@+id/contact_info_head"
+            android:layout_width="115sp"
+            android:layout_height="115sp"
+            android:layout_marginTop="@dimen/dp25"
+            android:src="@drawable/tree_contact_big_head"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:id="@+id/contact_info_name"
+            android:gravity="center"
+            android:textSize="@dimen/dp23"
+            android:layout_marginBottom="@dimen/dp21"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_below="@+id/contact_info_relative"
+        android:layout_above="@+id/contact_add_delete"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp1"
+                android:background="#e5e5e5"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginRight="@dimen/dp20"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:weightSum="7">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp20"
+                    android:layout_weight="3"
+                    android:gravity="center_vertical"
+                    android:text="Phone"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:id="@+id/contact_info_phone"
+                    android:gravity="center_vertical"
+                    android:inputType="phone"
+                    android:textSize="@dimen/dp20"
+                    android:layout_marginRight="@dimen/dp20"
+                    android:maxLines="2"/>
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp1"
+                android:background="#e5e5e5"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginRight="@dimen/dp20"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:weightSum="7">
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp20"
+                    android:layout_weight="3"
+                    android:gravity="center_vertical"
+                    android:text="MobilePhone"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:textSize="@dimen/dp20"
+                    android:id="@+id/contact_info_mobile_phone"
+                    android:gravity="center_vertical"
+                    android:inputType="phone"
+                    android:layout_marginRight="@dimen/dp20"
+                    android:maxLines="2"/>
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp1"
+                android:background="#e5e5e5"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginRight="@dimen/dp20"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:weightSum="7">
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp20"
+                    android:layout_weight="3"
+                    android:gravity="center_vertical"
+                    android:text="OfficePhone"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:textSize="@dimen/dp20"
+                    android:id="@+id/contact_info_office_phone"
+                    android:gravity="center_vertical"
+                    android:inputType="phone"
+                    android:layout_marginRight="@dimen/dp20"
+                    android:maxLines="2"/>
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp1"
+                android:background="#e5e5e5"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginRight="@dimen/dp20"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:weightSum="7">
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp20"
+                    android:layout_weight="3"
+                    android:gravity="center_vertical"
+                    android:text="Email"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:textSize="@dimen/dp20"
+                    android:id="@+id/contact_info_email"
+                    android:gravity="center_vertical"
+                    android:inputType="textEmailAddress"
+                    android:layout_marginRight="@dimen/dp20"
+                    android:maxLines="2"/>
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp1"
+                android:background="#e5e5e5"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginRight="@dimen/dp20"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:weightSum="7">
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp20"
+                    android:layout_weight="3"
+                    android:gravity="center_vertical"
+                    android:text="Address"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:textSize="@dimen/dp20"
+                    android:id="@+id/contact_info_address"
+                    android:gravity="center_vertical"
+                    android:layout_marginRight="@dimen/dp20"
+                    android:maxLines="2"/>
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp1"
+                android:background="#e5e5e5"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginRight="@dimen/dp20"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/contact_info_id"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/contact_add_delete">
+
+        <TextView
+            android:id="@+id/contact_info_delete"
+            android:layout_width="match_parent"
+            android:layout_height="35sp"
+            android:layout_margin="@dimen/dp20"
+            android:text="Delete the contact"
+            android:textSize="@dimen/dp17"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@drawable/tree_contact_delete" />
+
+        <TextView
+            android:id="@+id/contact_info_add"
+            android:layout_width="match_parent"
+            android:layout_height="35sp"
+            android:layout_margin="@dimen/dp20"
+            android:text="Add the contact"
+            android:textSize="@dimen/dp17"
+            android:textColor="#407fe8"
+            android:gravity="center"
+            android:background="@drawable/tree_contact_add"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

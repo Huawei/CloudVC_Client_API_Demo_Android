@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/media_btn_group"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_conference_share"
+    android:orientation="vertical">
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <FrameLayout android:id="@+id/conf_hangup"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0">
+
+            <ImageView android:id="@+id/conf_hangup_iv"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_gravity="center"
+                android:focusable="false"
+                android:padding="6dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/audio_bg_exit_transparrent"/>
+        </FrameLayout>
+
+        <FrameLayout android:id="@+id/conf_mute"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0">
+
+            <ImageView android:id="@+id/conf_mute_iv"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_gravity="center"
+                android:focusable="false"
+                android:padding="6dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/audio_bg_mute"/>
+        </FrameLayout>
+
+        <FrameLayout android:id="@+id/conf_loud_speaker"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0">
+
+            <ImageView android:id="@+id/conf_loud_speaker_iv"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_gravity="center"
+                android:focusable="false"
+                android:padding="6dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/audio_bg_loudhailer"/>
+        </FrameLayout>
+
+        <FrameLayout android:id="@+id/switch_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:visibility="gone">
+
+            <ImageView android:id="@+id/switch_camera_iv"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_gravity="center"
+                android:focusable="false"
+                android:padding="6dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_switchvideo_disable"/>
+        </FrameLayout>
+
+        <!--<FrameLayout android:id="@+id/btn_more"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1.0">-->
+
+            <!--<ImageView android:id="@+id/conf_btn_more"-->
+                <!--android:layout_width="65dp"-->
+                <!--android:layout_height="65dp"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:focusable="false"-->
+                <!--android:padding="6dp"-->
+                <!--android:scaleType="centerInside"-->
+                <!--android:src="@drawable/audio_bg_more"/>-->
+        <!--</FrameLayout>-->
+    </LinearLayout>
+
+</LinearLayout>

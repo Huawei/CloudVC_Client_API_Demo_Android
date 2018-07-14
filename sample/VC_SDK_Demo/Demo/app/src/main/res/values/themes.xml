@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme_dialog" parent="android:Theme.Dialog">
+        <item name="android:scrollbarThumbVertical">@drawable/e_scrollbar</item>
+
+        <item name="android:windowBackground">@color/bg_dialog_window</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
+</resources>

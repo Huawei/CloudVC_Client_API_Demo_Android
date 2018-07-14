@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <FrameLayout android:id="@+id/join_conf_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.0"
+        android:background="@drawable/selector_btn_red">
+
+        <TextView android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@string/join_conf"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+    </FrameLayout>
+
+    <LinearLayout android:id="@+id/reject_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="6dp"
+        android:layout_weight="1.0"
+        android:gravity="center"
+        android:background="@drawable/conf_detail_delete_select">
+
+        <ProgressBar android:id="@+id/progressbar1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="2.55dp"
+            android:indeterminateDrawable="@drawable/bar_anim"
+            android:visibility="gone"/>
+
+        <TextView android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="@string/conf_detail_btn_cancel_book"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+    </LinearLayout>
+</LinearLayout>

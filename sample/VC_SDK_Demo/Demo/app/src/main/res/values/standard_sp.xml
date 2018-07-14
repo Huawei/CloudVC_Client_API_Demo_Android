@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 适配720P设备的标准尺寸 -->
+<resources>
+    <dimen name="sp8">8sp</dimen>
+    <dimen name="sp9">9sp</dimen>
+    <dimen name="sp10">10sp</dimen>
+    <dimen name="sp10.5">10.5sp</dimen>
+    <dimen name="sp11">11sp</dimen>
+    <dimen name="sp12">12sp</dimen>
+    <dimen name="sp12.5">12.5sp</dimen>
+    <dimen name="sp13">13sp</dimen>
+    <dimen name="sp13.5">13.5sp</dimen>
+    <dimen name="sp14">14sp</dimen>
+    <dimen name="sp14.5">14.5sp</dimen>
+    <dimen name="sp15">15sp</dimen>
+    <dimen name="sp15.5">15.5sp</dimen>
+    <dimen name="sp16">16sp</dimen>
+    <dimen name="sp17">17sp</dimen>
+    <dimen name="sp18">18sp</dimen>
+    <dimen name="sp20">20sp</dimen>
+    <dimen name="sp21">21sp</dimen>
+    <dimen name="sp22">22sp</dimen>
+    <dimen name="sp23">23sp</dimen>
+    <dimen name="sp24">24sp</dimen>
+    <dimen name="sp25">25sp</dimen>
+    <dimen name="sp26">26sp</dimen>
+    <dimen name="sp27">27sp</dimen>
+    <dimen name="sp28">28sp</dimen>
+    <dimen name="sp29">29sp</dimen>
+    <dimen name="sp30">30sp</dimen>
+    <dimen name="sp36">36sp</dimen>
+</resources>

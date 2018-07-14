@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bg_common">
+
+    <include layout="@layout/dial_title"
+        android:id="@+id/title_layout"/>
+
+    <RelativeLayout android:id="@+id/conf_detail_action_area"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="13dp">
+
+        <ImageView android:id="@+id/line_image_view"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp0.3"
+            android:background="#cccccc"
+            android:scaleType="fitXY"/>
+
+        <include android:id="@+id/main_two_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_image_view"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginTop="13dp"
+            layout="@layout/main_two_btn"/>
+    </RelativeLayout>
+
+    <ScrollView android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/conf_detail_action_area"
+        android:layout_below="@id/title_layout"
+        android:layout_marginLeft="7dp"
+        android:scrollbars= "none">
+
+        <LinearLayout
+            android:id="@+id/conf_detail_area"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingRight="7dp">
+
+            <!-- 与会号码 -->
+
+            <RelativeLayout
+                android:id="@+id/participant_number_area"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dip"
+                android:background="@drawable/bg_row_single_normal">
+
+                <TextView
+                    android:id="@+id/participant_number_tag"
+                    android:layout_width="85dip"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dip"
+                    android:gravity="right"
+                    android:paddingLeft="4dp"
+                    android:text="@string/members_number"
+                    android:textColor="#999999"
+                    android:textSize="15sp"/>
+
+                <RelativeLayout
+                    android:id="@+id/participant_number_view"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/participant_number_tag"
+                    android:paddingRight="5dp">
+
+                    <TextView
+                        android:id="@+id/participant_number_tv"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/participant_number_iv"
+                        android:textColor="#333333"
+                        android:textSize="15sp"/>
+
+                    <ImageButton
+                        android:id="@+id/participant_number_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/icon_arrow_down_normal"
+                        android:clickable="false"
+                        android:visibility="gone"/>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <!-- 会议时间 -->
+
+            <RelativeLayout
+                android:id="@+id/conference_start_time_view"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dip"
+                android:background="@drawable/conf_create_up">
+
+                <TextView
+                    android:id="@+id/conference_start_time_tag"
+                    android:layout_width="85dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dip"
+                    android:gravity="right"
+                    android:paddingLeft="4dp"
+                    android:text="@string/begin_time"
+                    android:textColor="#999999"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/conference_start_time_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/conference_start_time_tag"
+                    android:textColor="#333333"
+                    android:textSize="15sp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/conference_end_time_view"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="11dp"
+                android:background="@drawable/conf_create_down">
+
+                <TextView
+                    android:id="@+id/conference_end_time_tag"
+                    android:layout_width="85dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:gravity="right"
+                    android:paddingLeft="4dp"
+                    android:text="@string/end_time"
+                    android:textColor="#999999"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/conference_end_time_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/conference_end_time_tag"
+                    android:textColor="#333333"
+                    android:textSize="15sp"/>
+            </RelativeLayout>
+
+            <!-- 与会者 -->
+
+            <RelativeLayout android:id="@+id/conf_member_view"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="11dp"
+                android:background="@drawable/bg_row_single_normal"
+                android:gravity="center_vertical"
+                android:visibility="gone">
+
+                <TextView android:id="@+id/time_tag"
+                    android:layout_width="85dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="right"
+                    android:paddingLeft="4dp"
+                    android:text="@string/conference_members"
+                    android:textColor="#999999"
+                    android:textSize="15sp"/>
+
+                <RelativeLayout android:id="@+id/auto_location_detail"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_toRightOf="@id/time_tag">
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <!-- 接入码 -->
+            <TextView
+            android:id="@+id/conference_accesscode_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginBottom="6dip"
+            android:text="@string/conf_access_code"
+            android:textColor="#666666"
+            android:textSize="14sp"
+            android:visibility="visible"/>
+
+            <RelativeLayout
+                android:id="@+id/conference_id_view"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/conf_create_up"
+                android:visibility="visible"
+                android:layout_marginBottom="@dimen/dp10">
+
+                <TextView
+                    android:id="@+id/conference_id_tag"
+                    android:layout_width="85dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:gravity="right"
+                    android:paddingLeft="4dp"
+                    android:text="@string/conf_id"
+                    android:textColor="#999999"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/conference_id_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/conference_id_tag"
+                    android:textColor="#333333"
+                    android:textSize="15sp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/conference_access_code_view"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/conf_create_up"
+                android:visibility="visible"
+                android:layout_marginBottom="@dimen/dp10">
+
+                <TextView
+                    android:id="@+id/conference_access_code_tag"
+                    android:layout_width="85dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:gravity="right"
+                    android:paddingLeft="4dp"
+                    android:text="@string/access_number"
+                    android:textColor="#999999"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/conference_access_code_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/conference_access_code_tag"
+                    android:textColor="#333333"
+                    android:textSize="15sp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/conference_host_password_view"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/conf_create_up"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/conference_host_password_tag"
+                    android:layout_width="85dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dip"
+                    android:gravity="right"
+                    android:paddingLeft="4dp"
+                    android:text="@string/chairman_password"
+                    android:textColor="#999999"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/conference_host_password_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/conference_host_password_tag"
+                    android:textColor="#333333"
+                    android:textSize="15sp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/conference_member_password_view"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/conf_create_down"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/conference_member_password_tag"
+                    android:layout_width="85dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:gravity="right"
+                    android:paddingLeft="4dp"
+                    android:text="@string/guest_password"
+                    android:textColor="#999999"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/conference_member_password_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/conference_member_password_tag"
+                    android:textColor="#333333"
+                    android:textSize="15sp"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

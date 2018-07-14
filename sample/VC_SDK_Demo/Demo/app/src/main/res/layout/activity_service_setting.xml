@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/dial_title"/>
+
+    <!--<TextView-->
+        <!--android:id="@+id/ipt_service_setting"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:drawablePadding="20dp"-->
+        <!--android:drawableLeft="@drawable/setting_more"-->
+        <!--android:text="IPT Service"-->
+        <!--android:textSize="24sp" />-->
+
+    <com.huawei.opensdk.ec_sdk_demo.widget.BottomLineLayout
+        android:id="@+id/other_setting"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp55"
+        app:lineColor="#e5e5e5"
+        app:linePaddingLeft="@dimen/dp70">
+
+        <ImageView android:id="@+id/other_setting_iv"
+            android:layout_width="@dimen/dp25"
+            android:layout_height="@dimen/dp25"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp23"
+            android:layout_marginRight="@dimen/dp23"
+            android:scaleType="fitXY"
+            android:src="@drawable/setting_more"/>
+
+        <TextView android:id="@+id/other_setting_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/other_setting_iv"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="Other"
+            android:textColor="@color/textPrimary"
+            android:textSize="16sp"/>
+    </com.huawei.opensdk.ec_sdk_demo.widget.BottomLineLayout>
+
+    <!--<TextView-->
+        <!--android:id="@+id/other_setting"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:drawablePadding="20dp"-->
+        <!--android:drawableLeft="@drawable/setting_more"-->
+        <!--android:text="Other"-->
+        <!--android:textSize="24sp" />-->
+
+    <View android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#dddddd"/>
+
+</LinearLayout>

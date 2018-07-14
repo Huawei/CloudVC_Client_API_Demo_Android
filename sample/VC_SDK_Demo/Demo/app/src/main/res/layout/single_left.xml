@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/left_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_h">
+
+    <FrameLayout android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <ImageView android:id="@+id/back_iv"
+            android:layout_width="@dimen/nav_h"
+            android:layout_height="@dimen/nav_h"
+            android:background="@drawable/bg_title_icon"
+            android:padding="@dimen/dp17.5"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_back"/>
+
+        <TextView android:id="@+id/unreadCountView"
+            android:layout_width="@dimen/dp16"
+            android:layout_height="@dimen/dp16"
+            android:layout_gravity="top|right"
+            android:layout_marginRight="@dimen/dp3"
+            android:layout_marginTop="@dimen/dp2"
+            android:background="@drawable/unread_bg"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/sp10"
+            android:textStyle="bold"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+
+    <LinearLayout android:id="@+id/title_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dp2"
+        android:paddingRight="@dimen/dp5">
+
+        <TextView android:id="@+id/title_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp16"/>
+
+        <TextView android:id="@+id/status_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp2"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp14"
+            android:visibility="gone"/>
+    </LinearLayout>
+</LinearLayout>

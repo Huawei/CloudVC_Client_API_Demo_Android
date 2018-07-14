@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.huawei.opensdk.ec_sdk_demo.widget.BottomLineLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/dp60.5"
+                android:minHeight="@dimen/dp60.5"
+                android:id="@+id/conf_item"
+                android:background="@color/white"
+                android:paddingRight="14dp">
+
+    <ImageView android:id="@+id/conf_icon"
+               android:layout_width="40dp"
+               android:layout_height="40dp"
+               android:layout_marginLeft="6.67dp"
+               android:src="@drawable/conf_to_attend_tag"
+               android:layout_centerVertical="true"/>
+
+    <TextView android:id="@+id/conf_name"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:layout_toRightOf="@+id/conf_icon"
+              android:layout_marginTop="8dp"
+              android:layout_marginLeft="8dp"
+              android:textColor="#cccccc"
+              android:textSize="16sp"
+              android:layout_toLeftOf="@+id/meeting_back"
+              android:ellipsize="end"
+              android:singleLine="true"/>
+
+    <LinearLayout android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@id/conf_name"
+                  android:layout_alignLeft="@+id/conf_name"
+                  android:layout_marginTop="4dp"
+                  android:layout_toLeftOf="@+id/meeting_back"
+            >
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textColor="#cccccc"
+                  android:textSize="12sp"
+                  android:layout_marginRight="15.3dip"
+                  android:id="@+id/conf_time"
+                  android:text="@string/conference_time"/>
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textColor="#cccccc"
+                  android:textSize="12sp"
+                  android:id="@+id/conf_emcee"
+                  android:ellipsize="end"
+                  android:singleLine="true"/>
+    </LinearLayout>
+
+    <ImageView
+            android:id="@+id/meeting_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="6.67dp"
+            android:src="@drawable/icon_meeting_back"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+</com.huawei.opensdk.ec_sdk_demo.widget.BottomLineLayout>

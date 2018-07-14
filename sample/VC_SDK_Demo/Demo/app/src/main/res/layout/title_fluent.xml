@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 必须放置到RelativeLayout，否则布局异常 -->
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <View android:id="@+id/title_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/back_iv"
+        android:background="#387fe8"
+        android:clickable="true"/>
+
+    <ImageView android:id="@+id/back_iv"
+        style="@style/title_back_style"/>
+
+    <ImageView android:id="@+id/right_iv"
+        style="@style/title_icon_style"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/icon_menu"/>
+</merge>

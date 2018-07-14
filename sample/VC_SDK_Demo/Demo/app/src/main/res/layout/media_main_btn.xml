@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/media_btn_group"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_conference_share"
+    android:orientation="horizontal">
+
+    <FrameLayout android:id="@+id/video_hangup_area"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1.0">
+
+        <ImageView android:id="@+id/media_btn_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:focusable="false"
+            android:padding="6dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/audio_bg_exit_transparrent"/>
+    </FrameLayout>
+
+    <FrameLayout android:id="@+id/video_plate_area"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1.0">
+
+        <ImageView android:id="@+id/video_plate_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:focusable="false"
+            android:padding="6dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/audio_bg_dial_plate"/>
+    </FrameLayout>
+
+    <FrameLayout android:id="@+id/video_mute_area"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1.0">
+
+        <ImageView android:id="@+id/video_mut_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:focusable="false"
+            android:padding="6dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/audio_bg_mute"/>
+    </FrameLayout>
+
+    <FrameLayout android:id="@+id/video_speaker_area"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1.0">
+
+        <ImageView android:id="@+id/video_speaker_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:focusable="false"
+            android:padding="6dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/audio_bg_loudhailer"/>
+    </FrameLayout>
+
+    <FrameLayout android:id="@+id/main_layout_five"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1.0">
+
+        <ImageView android:id="@+id/media_btn_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:focusable="false"
+            android:padding="6dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/audio_bg_more"/>
+    </FrameLayout>
+</LinearLayout>
