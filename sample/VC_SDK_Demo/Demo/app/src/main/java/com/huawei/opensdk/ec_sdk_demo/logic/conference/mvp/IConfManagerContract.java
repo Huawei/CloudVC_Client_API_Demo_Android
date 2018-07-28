@@ -25,7 +25,8 @@ public interface IConfManagerContract
 
         void updateConfTypeIcon(ConfBaseInfo confBaseInfo);
 
-        void updateDataConfBtn(boolean show);
+        //之前判断是否在数据会议中是通过数据会议入会结果判断的，现在是通过加入数据会议回调判断
+//        void updateDataConfBtn(boolean show);
 
         void updateVideoBtn(boolean show);
 

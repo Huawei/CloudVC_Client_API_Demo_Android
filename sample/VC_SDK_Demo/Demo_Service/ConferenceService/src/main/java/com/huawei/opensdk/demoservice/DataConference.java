@@ -821,7 +821,9 @@ public class DataConference implements IConferenceUI {
             userNumber = extendMsg.getUserUri();
         }
 
-        Member member = meetingInstance.getMemberByNumber(userNumber);
+        //SMC下不能通过号码判断
+//        Member member = meetingInstance.getMemberByNumber(userNumber);
+        Member member = meetingInstance.checkSelfInDataConf(userNumber);
         if (member == null)
         {
             return;

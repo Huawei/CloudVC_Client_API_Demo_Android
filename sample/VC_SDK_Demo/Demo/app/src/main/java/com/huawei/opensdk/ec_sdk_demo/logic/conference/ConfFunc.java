@@ -275,6 +275,10 @@ public class ConfFunc implements IConfNotification
                 LocBroadcast.getInstance().sendBroadcast(CustomBroadcastConstants.DATA_CONFERENCE_JOIN_RESULT, params);
                 break;
 
+            case JOIN_DATA_CONF_TERMINATE:
+                LocBroadcast.getInstance().sendBroadcast(CustomBroadcastConstants.CONF_MSG_ON_CONFERENCE_TERMINATE, params);
+                break;
+
             case CAMERA_STATUS_UPDATE:
                 LocBroadcast.getInstance().sendBroadcast(CustomBroadcastConstants.DATA_CONFERENCE_CAMERA_STATUS_UPDATE, params);
                 break;

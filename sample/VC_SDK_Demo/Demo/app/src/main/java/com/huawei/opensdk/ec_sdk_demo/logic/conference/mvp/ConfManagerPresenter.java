@@ -20,7 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ConfManagerPresenter extends MVPBasePresenter<IConfManagerContract.IConfManagerView> implements IConfManagerContract.IConfManagerPresenter
+public class ConfManagerPresenter extends MVPBasePresenter<IConfManagerContract.IConfManagerView>
+        implements IConfManagerContract.IConfManagerPresenter
 {
     private String confID;
 
@@ -369,7 +370,8 @@ public class ConfManagerPresenter extends MVPBasePresenter<IConfManagerContract.
                     result = (int)obj;
                     if (result != 0)
                     {
-                        updateDataConfBtn(false);
+                        //已做了是否在数据会议中的判断，此处的更新可省略
+//                        updateDataConfBtn(false);
                         //getView().showCustomToast(R.string.get_data_conf_params_fail);
                         return;
                     }
@@ -382,7 +384,8 @@ public class ConfManagerPresenter extends MVPBasePresenter<IConfManagerContract.
 
                 case CustomBroadcastConstants.DATA_CONFERENCE_JOIN_RESULT:
                     result = (int) obj;
-                    updateDataConfBtn(result == 0);
+                    //已做了是否在数据会议中的判断，此处的更新可省略
+//                    updateDataConfBtn(result == 0);
                     if (result != 0)
                     {
                         getView().showCustomToast(R.string.join_data_conf_fail);
@@ -437,12 +440,12 @@ public class ConfManagerPresenter extends MVPBasePresenter<IConfManagerContract.
 
     /**
      * 更新数据会议按钮显示状态
-     * @param show
+     * @param
      */
-    private void updateDataConfBtn(boolean show)
-    {
-        getView().updateDataConfBtn(show);
-    }
+//    private void updateDataConfBtn(boolean show)
+//    {
+//        getView().updateDataConfBtn(show);
+//    }
 
 
     private Member getSelf()

@@ -8,6 +8,7 @@ import android.util.Log;
 
 import com.huawei.opensdk.commonservice.util.DeviceManager;
 import com.huawei.opensdk.commonservice.util.LogUtil;
+import com.huawei.opensdk.sdkwrapper.login.ConfConfigInfo;
 import com.huawei.opensdk.sdkwrapper.login.ITupLoginCenterNotify;
 import com.huawei.opensdk.sdkwrapper.login.LoginCenter;
 import com.huawei.opensdk.sdkwrapper.login.LoginEvent;
@@ -15,10 +16,12 @@ import com.huawei.opensdk.sdkwrapper.login.LoginResult;
 import com.huawei.opensdk.sdkwrapper.login.LoginStatus;
 import com.huawei.opensdk.sdkwrapper.login.SipAccountInfo;
 import com.huawei.opensdk.sdkwrapper.manager.TupMgr;
+import com.huawei.tup.confctrl.ConfctrlConfEnvType;
 import com.huawei.tup.login.LoginAuthInfo;
 import com.huawei.tup.login.LoginAuthServerInfo;
 import com.huawei.tup.login.LoginAuthType;
 import com.huawei.tup.login.LoginAuthorizeParam;
+import com.huawei.tup.login.LoginFirewallMode;
 import com.huawei.tup.login.LoginServerType;
 
 /**
@@ -113,6 +116,9 @@ public class LoginMgr implements ITupLoginCenterNotify
                 serverInfo.setServerType(LoginServerType.LOGIN_E_SERVER_TYPE_MEDIAX);
                 break;
             case LoginCenter.LOGIN_E_SERVER_TYPE_SMC:
+                LoginCenter.getInstance().setSipPort(loginParam.getServerPort());
+                serverInfo.setProxyPort(443);
+                serverInfo.setServerPort(443);
                 serverInfo.setServerType(LoginServerType.LOGIN_E_SERVER_TYPE_SMC);
                 break;
             default:
@@ -126,10 +132,11 @@ public class LoginMgr implements ITupLoginCenterNotify
         authorizeParam.setAuthType(LoginAuthType.LOGIN_E_AUTH_NORMAL);
         authorizeParam.setAuthInfo(authInfo);
         authorizeParam.setAuthServer(serverInfo);
-        authorizeParam.setUserAgent("WEB");
+        authorizeParam.setUserAgent("Huawei TE Mobile");
         authorizeParam.setUserTiket("");
 
         int loginResult = LoginCenter.getInstance().login(authorizeParam);
+
         if (loginResult != 0)
         {
             LogUtil.e(TAG, "authorize is failed, return " + loginResult);

@@ -14,9 +14,11 @@ import com.huawei.tup.login.LoginAuthorizeResult;
 import com.huawei.tup.login.LoginConfigQueryRes;
 import com.huawei.tup.login.LoginFirewallMode;
 import com.huawei.tup.login.LoginGetMediaXVersionResult;
+import com.huawei.tup.login.LoginGetSiteInfoResult;
 import com.huawei.tup.login.LoginIpAddrActiveResult;
 import com.huawei.tup.login.LoginOnUc32UportalTokenRefresh;
 import com.huawei.tup.login.LoginSmcAuthorizeResult;
+import com.huawei.tup.login.LoginTempuserInfo;
 import com.huawei.tup.login.LoginUportalAuthorizeResult;
 import com.huawei.tup.login.sdk.TupLoginErrorID;
 import com.huawei.tup.login.sdk.TupLoginNotify;
@@ -255,65 +257,39 @@ class AuthEventAdapt implements TupLoginNotify {
         LoginCenter loginCenter = LoginCenter.getInstance();
         LoginFirewallMode firewallMode = LoginFirewallMode.LOGIN_E_FIREWALL_MODE_NULL;
 
-        String errorText;
-        int result = -1;
-        LoginResult loginResult  = new LoginResult();
         if (tupLoginOptResult == null || loginSmcAuthorizeResult == null)
         {
             if (null == tupLoginOptResult) {
                 Log.e(TAG, "authorize Opt result is null");
-                errorText = LOGIN_FAILED;
             } else {
                 Log.e(TAG, "authorize result is null");
-                result = tupLoginOptResult.getOptResult();
-                errorText = getAuthorizeErrorText(result);
             }
-
-            loginResult.setResult(1);
-            loginResult.setReason(result);
-            loginResult.setDescription(errorText);
-
-            loginStatusNotify.onLoginEventNotify(LoginEvent.LOGIN_E_EVT_AUTH_FAILED, loginResult, null);
         }
         else if (tupLoginOptResult.getOptResult() != TupLoginErrorID.LOGIN_E_ERR_SUCCESS)
         {
             Log.e(TAG, "SMC authorize failed.");
-            this.smcAuthorizeResult = loginSmcAuthorizeResult;
-
-            result = tupLoginOptResult.getOptResult();
-            errorText = getAuthorizeErrorText(result);
-
-            loginResult.setResult(1);
-            loginResult.setReason(result);
-            loginResult.setDescription(errorText);
-
-            loginStatusNotify.onLoginEventNotify(LoginEvent.LOGIN_E_EVT_AUTH_FAILED, loginResult, null);
         }
         else
         {
-            
-            //获取会议相关的配置信息
-            if (TupMgr.getInstance().getFeatureMgr().isSupportAudioAndVideoConf()) {
-                ConfConfigInfo confConfigInfo = loginCenter.getConfAccountInfoFromAuthResult(loginSmcAuthorizeResult);
-                loginCenter.setConfConfigInfo(confConfigInfo);
-            }
+            int result = tupLoginOptResult.getOptResult();
+            String errorText = getAuthorizeErrorText(result);
 
-            result = tupLoginOptResult.getOptResult();
-            errorText = getAuthorizeErrorText(result);
-
+            LoginResult loginResult  = new LoginResult();
             loginResult.setResult(0);
             loginResult.setReason(result);
             loginResult.setDescription(errorText);
 
             LoginStatus loginStatus = loginCenter.getLoginStatus();
-            loginStatus.setSmcAuthorizeResult(this.smcAuthorizeResult);
 
             loginStatusNotify.onLoginEventNotify(LoginEvent.LOGIN_E_EVT_AUTH_SUCCESS, loginResult, loginStatus);
 
-            loginAllService(firewallMode);
-
         }
-
+        //获取会议相关的配置信息
+        if (TupMgr.getInstance().getFeatureMgr().isSupportAudioAndVideoConf()) {
+            ConfConfigInfo confConfigInfo = loginCenter.getConfAccountInfoFromAuthResult(loginSmcAuthorizeResult);
+            loginCenter.setConfConfigInfo(confConfigInfo);
+        }
+        loginAllService(firewallMode);
         return;
     }
 
@@ -441,7 +417,17 @@ class AuthEventAdapt implements TupLoginNotify {
     }
 
     @Override
+    public void onGetSiteInfoResult(TupLoginOptResult tupLoginOptResult, LoginGetSiteInfoResult loginGetSiteInfoResult) {
+
+    }
+
+    @Override
     public void onGetMediaXVersionResult(TupLoginOptResult tupLoginOptResult, LoginGetMediaXVersionResult loginGetMediaXVersionResult) {
+
+    }
+
+    @Override
+    public void onGetTempuserResult(TupLoginOptResult tupLoginOptResult, LoginTempuserInfo loginTempuserInfo) {
 
     }
 
@@ -496,14 +482,11 @@ class AuthEventAdapt implements TupLoginNotify {
                 {
                     loginStatus.setAuthResult(this.authorizeResult);
                 }
-                else
-                {
-                    loginStatus.setSmcAuthorizeResult(this.smcAuthorizeResult);
-                }
 
                 loginStatusNotify.onLoginEventNotify(LoginEvent.LOGIN_E_EVT_VOIP_LOGIN_FAILED, loginResult, loginStatus);
             }
         }
+
 
         //如果支持音视频会议，则设置会议参数
         if (TupMgr.getInstance().getFeatureMgr().isSupportAudioAndVideoConf()) {

@@ -11,11 +11,15 @@ public interface IDataConfContract
 {
     interface DataConfView extends BaseView
     {
-
+        void finishActivity();
     }
 
     interface IDataConfPresenter
     {
+        void registerBroadcast();
+
+        void unregisterBroadcast();
+
         void setConfID(String confID);
 
         String getSubject();

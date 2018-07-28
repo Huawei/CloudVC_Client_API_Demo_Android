@@ -91,6 +91,23 @@ public class DataConfActivity extends MVPBaseActivity<IDataConfContract.DataConf
     }
 
     @Override
+    public void finishActivity() {
+        finish();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mPresenter.registerBroadcast();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mPresenter.unregisterBroadcast();
+    }
+
+    @Override
     public void showLoading() {
 
     }

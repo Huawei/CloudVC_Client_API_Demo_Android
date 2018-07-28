@@ -18,6 +18,7 @@ import com.huawei.opensdk.callmgr.CallConstant;
 import com.huawei.opensdk.callmgr.CallMgr;
 import com.huawei.opensdk.demoservice.ConfBaseInfo;
 import com.huawei.opensdk.demoservice.ConfConstant;
+import com.huawei.opensdk.demoservice.MeetingMgr;
 import com.huawei.opensdk.demoservice.Member;
 import com.huawei.opensdk.ec_sdk_demo.R;
 import com.huawei.opensdk.ec_sdk_demo.adapter.ConfManagerAdapter;
@@ -33,11 +34,13 @@ import com.huawei.opensdk.ec_sdk_demo.widget.EditDialog;
 import com.huawei.opensdk.ec_sdk_demo.widget.SimpleListDialog;
 import com.huawei.opensdk.ec_sdk_demo.widget.ThreeInputDialog;
 import com.huawei.opensdk.ec_sdk_demo.widget.TripleDialog;
+import com.huawei.opensdk.sdkwrapper.login.LoginCenter;
 
 import java.util.List;
 
 
-public class ConfManagerActivity extends MVPBaseActivity<IConfManagerContract.IConfManagerView, ConfManagerPresenter> implements IConfManagerContract.IConfManagerView, View.OnClickListener
+public class ConfManagerActivity extends MVPBaseActivity<IConfManagerContract.IConfManagerView, ConfManagerPresenter>
+        implements IConfManagerContract.IConfManagerView, View.OnClickListener
 {
 
     private ConfManagerPresenter mPresenter;
@@ -58,6 +61,8 @@ public class ConfManagerActivity extends MVPBaseActivity<IConfManagerContract.IC
 
     private String confID;
 //    private ConfConstant.ConfRole confRole;
+    boolean isVideoIV = false;
+    boolean isShareIV = false;
 
     @Override
     protected IConfManagerContract.IConfManagerView createView()
@@ -87,6 +92,22 @@ public class ConfManagerActivity extends MVPBaseActivity<IConfManagerContract.IC
         btnVideoIV = (ImageView) findViewById(R.id.video_view);
         btnShareIV = (ImageView) findViewById(R.id.share_view);
         updateConfFrame = (FrameLayout) findViewById(R.id.conf_update);
+
+        //SMC下不支持升级会议，屏蔽升级按钮
+        if(LoginCenter.getInstance().getServerType() ==
+                LoginCenter.getInstance().LOGIN_E_SERVER_TYPE_SMC){
+            updateConfFrame.setVisibility(View.GONE);
+        }
+
+
+        //为兼容SMC组网下，与会者列表更新不及时，导致会控功能崩溃，这里先隐藏按钮，与会者列表报上来之后再显示按钮。
+        muteSelfIV.setVisibility(View.GONE);
+        loudSpeakerIV.setVisibility(View.GONE);
+        btnMoreIV.setVisibility(View.GONE);
+        btnVideoIV.setVisibility(View.GONE);
+        btnShareIV.setVisibility(View.GONE);
+        existConfIV.setVisibility(View.GONE);
+
 
         existConfIV.setOnClickListener(this);
         muteSelfIV.setOnClickListener(this);
@@ -399,6 +420,19 @@ public class ConfManagerActivity extends MVPBaseActivity<IConfManagerContract.IC
         editDialog.show();
     }
 
+    private void showAllButton(){
+        muteSelfIV.setVisibility(View.VISIBLE);
+        loudSpeakerIV.setVisibility(View.VISIBLE);
+        btnMoreIV.setVisibility(View.VISIBLE);
+        existConfIV.setVisibility(View.VISIBLE);
+        if(isVideoIV){
+            btnVideoIV.setVisibility(View.VISIBLE);
+        }
+        if (isShareIV){
+            btnShareIV.setVisibility(View.VISIBLE);
+        }
+    }
+
     @Override
     public void refreshMemberList(final List<Member> list)
     {
@@ -407,6 +441,9 @@ public class ConfManagerActivity extends MVPBaseActivity<IConfManagerContract.IC
             @Override
             public void run()
             {
+                if (MeetingMgr.getInstance().getCurrentConferenceSelf()!=null){
+                    showAllButton();
+                }
                 adapter.setData(list);
                 adapter.notifyDataSetChanged();
             }
@@ -427,7 +464,8 @@ public class ConfManagerActivity extends MVPBaseActivity<IConfManagerContract.IC
                 if ((ConfConstant.ConfMediaType.VIDEO_CONF == confEntity.getMediaType())
                         || (ConfConstant.ConfMediaType.VIDEO_AND_DATA_CONF == confEntity.getMediaType()))
                 {
-                    btnVideoIV.setVisibility(View.VISIBLE);
+                    isVideoIV = true;
+//                    btnVideoIV.setVisibility(View.VISIBLE);
                 }
 
 //                if ((ConfConstant.ConfMediaType.VOICE_AND_DATA_CONF == confEntity.getMediaType())
@@ -439,10 +477,13 @@ public class ConfManagerActivity extends MVPBaseActivity<IConfManagerContract.IC
 //                    }
 //                }
 
-                if (ConfConstant.ConfMediaType.VIDEO_AND_DATA_CONF == confEntity.getMediaType())
+                if ((ConfConstant.ConfMediaType.VIDEO_CONF == confEntity.getMediaType())||
+                        (ConfConstant.ConfMediaType.VIDEO_AND_DATA_CONF == confEntity.getMediaType()))
                 {
+                    //SMC下此处是判断不出是否显示数据会议图标，使用下面的updateDataConfBtn（）方法显示图标。
                     if (mPresenter.isInDataConf()) {
-                        btnShareIV.setVisibility(View.VISIBLE);
+                        isShareIV = true;
+//                        btnShareIV.setVisibility(View.VISIBLE);
                     }
                 }
 
@@ -455,18 +496,19 @@ public class ConfManagerActivity extends MVPBaseActivity<IConfManagerContract.IC
         });
     }
 
-    @Override
-    public void updateDataConfBtn(final boolean show)
-    {
-        runOnUiThread(new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                btnShareIV.setVisibility(show ? View.VISIBLE : View.GONE);
-            }
-        });
-    }
+//    之前判断是否在数据会议中是通过数据会议入会结果判断的，现在是通过加入数据会议回调判断
+//    @Override
+//    public void updateDataConfBtn(final boolean show)
+//    {
+//        runOnUiThread(new Runnable()
+//        {
+//            @Override
+//            public void run()
+//            {
+//                btnShareIV.setVisibility(show ? View.VISIBLE : View.GONE);
+//            }
+//        });
+//    }
 
     @Override
     public void updateVideoBtn(final boolean show)
@@ -492,12 +534,18 @@ public class ConfManagerActivity extends MVPBaseActivity<IConfManagerContract.IC
 //                }
 //            });
 //        }
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                updateConfFrame.setVisibility(isDataConf ? View.GONE : View.VISIBLE);
-            }
-        });
+
+        //SMC下没有升级会议按钮 在此屏蔽
+        if(LoginCenter.getInstance().getServerType() ==
+                LoginCenter.getInstance().LOGIN_E_SERVER_TYPE_MEDIAX)
+        {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    updateConfFrame.setVisibility(isDataConf ? View.GONE : View.VISIBLE);
+                }
+            });
+        }
     }
 
     @Override

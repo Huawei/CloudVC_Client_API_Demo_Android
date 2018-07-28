@@ -531,7 +531,27 @@ class CallEventAdapt implements TupCallNotify{
     }
 
     @Override
+    public void onVideoTmmbrSwitch(int i, int i1) {
+
+    }
+
+    @Override
     public void onAudioHowlStatus(int i, int i1) {
 
+    }
+
+    @Override
+    public void onAudioResetRoute(int i, int i1) {
+
+    }
+
+    @Override
+    public void onCallHMEInterfaceErrorInfo(String s, int i) {
+
+    }
+
+    @Override
+    public void onDebugSend(tupsdk.LinkData linkData) {
+        
     }
 }

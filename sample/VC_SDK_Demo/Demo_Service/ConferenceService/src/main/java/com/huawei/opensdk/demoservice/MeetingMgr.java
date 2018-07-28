@@ -1010,7 +1010,9 @@ public class MeetingMgr extends TupConfNotifyBase implements IMeetingMgr{
             member.setNumber(speaker.getNumber());
 
             //根据号码在与会者列表中找到与会者，获取此与会者的名字
-            Member temp = getMemberByNumber(speaker.getNumber());
+//            Member temp = getMemberByNumber(speaker.getNumber());
+            //SMC下通过MT号判断
+            Member temp = getMemberByNumber(speaker.getMT());
             if (temp == null) {
                 continue;
             }

@@ -25,12 +25,6 @@ public class LoginStatus {
     private LoginAuthorizeResult authResult;
 
     /**
-     * SP&IMS on-premise VC login authorize result
-     * (SP&IMS Hosted VC) 鉴权登录结果
-     */
-    private LoginSmcAuthorizeResult smcAuthorizeResult;
-
-    /**
      * Register result
      * 注册结果信息
      */
@@ -50,14 +44,6 @@ public class LoginStatus {
 
     public void setAuthResult(LoginAuthorizeResult authResult) {
         this.authResult = authResult;
-    }
-
-    public LoginSmcAuthorizeResult getSmcAuthorizeResult() {
-        return smcAuthorizeResult;
-    }
-
-    public void setSmcAuthorizeResult(LoginSmcAuthorizeResult smcAuthorizeResult) {
-        this.smcAuthorizeResult = smcAuthorizeResult;
     }
 
     public TupRegisterResult getCallResult() {

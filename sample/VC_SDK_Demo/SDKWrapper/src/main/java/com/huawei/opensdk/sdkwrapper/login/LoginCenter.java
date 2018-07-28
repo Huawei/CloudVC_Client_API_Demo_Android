@@ -136,6 +136,11 @@ public class LoginCenter {
     private int sipTransportMode = 0;
 
     /**
+     * SMC组网下保存UI端口，用于sip注册
+     */
+    private int sipPort;
+
+    /**
      * This is a constructor of LoginCenter class.
      * 构造方法
      */
@@ -176,7 +181,6 @@ public class LoginCenter {
         this.password = loginParam.getAuthInfo().getPassword();
         this.loginServerAddress = loginParam.getAuthServer().getServerUrl();
         this.loginServerPort = loginParam.getAuthServer().getServerPort();
-
         ret = TupMgr.getInstance().getAuthManagerIns().authorize(loginParam);
         if (ret != 0) {
             Log.e(TAG, "login is failed" + ret);
@@ -222,18 +226,10 @@ public class LoginCenter {
 
         //设置sip注册参数
         TupCallCfgSIP tupCallCfgSIP = TupMgr.getInstance().getTupCallCfgSIP();
-        if (this.getSipTransportMode() == TupCallParam.CALL_E_TRANSPORTMODE.CALL_E_TRANSPORTMODE_UDP)
-        {
-            tupCallCfgSIP.setServerRegPrimary(loginServerAddress, loginServerPort);
-            tupCallCfgSIP.setServerProxyPrimary(loginServerAddress, loginServerPort);
-            tupCallCfgSIP.setSipPort(loginServerPort);
-        }
-        else
-        {
-            tupCallCfgSIP.setServerRegPrimary(loginServerAddress, loginServerPort + 1);
-            tupCallCfgSIP.setServerProxyPrimary(loginServerAddress, loginServerPort + 1);
-            tupCallCfgSIP.setSipPort(loginServerPort + 1);
-        }
+        tupCallCfgSIP.setServerRegPrimary(loginServerAddress, this.sipPort);
+        tupCallCfgSIP.setServerProxyPrimary(loginServerAddress, this.sipPort);
+        tupCallCfgSIP.setSipPort(this.sipPort);
+
         tupCallCfgSIP.setNetAddress(localIPAddress);
         tupCallCfgSIP.setSipTransMode(getSipTransportMode());
         TupMgr.getInstance().getCallManagerIns().setCfgSIP(tupCallCfgSIP);
@@ -404,8 +400,11 @@ public class LoginCenter {
         {
             confConfigInfo.setServerUri(loginSmcAuthorizeResult.getSmcServers().get(0).getServerUri());
             confConfigInfo.setServerPort(loginSmcAuthorizeResult.getSmcServers().get(0).getServerPort());
+        }else {
+            //设置会议服务器地址和端口号
+            confConfigInfo.setServerUri(loginServerAddress);
+            confConfigInfo.setServerPort(443);
         }
-
         return confConfigInfo;
     }
 
@@ -652,4 +651,7 @@ public class LoginCenter {
         this.serverType = serverType;
     }
 
+    public void setSipPort(int sipPort) {
+        this.sipPort = sipPort;
+    }
 }

@@ -872,6 +872,25 @@ public class MeetingInstance {
         }
     }
 
+    /**
+     * 因SMC通过MT号判断是否是自己，数据会议中没有MT号，
+     * 新增此方法判断是否在数据会议中。
+     * @param number
+     * @return
+     */
+    public Member checkSelfInDataConf(String number){
+        Member temp = null;
+        for (int i=0;i<memberList.size();i++)
+        {
+            if (memberList.get(i).getNumber().equals(number))
+            {
+                temp = memberList.get(i);
+            }
+        }
+
+        return temp;
+    }
+
     public Member getMemberByDataUserId(long userId) {
         if (userId == 0) {
             return null;

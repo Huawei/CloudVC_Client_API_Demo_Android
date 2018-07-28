@@ -5,6 +5,9 @@ import android.content.Context;
 import android.view.ViewGroup;
 
 import com.huawei.opensdk.callmgr.CallMgr;
+import com.huawei.opensdk.commonservice.localbroadcast.CustomBroadcastConstants;
+import com.huawei.opensdk.commonservice.localbroadcast.LocBroadcast;
+import com.huawei.opensdk.commonservice.localbroadcast.LocBroadcastReceiver;
 import com.huawei.opensdk.demoservice.ConfConstant;
 import com.huawei.opensdk.demoservice.MeetingMgr;
 import com.huawei.opensdk.demoservice.Member;
@@ -16,6 +19,19 @@ public class DataConfPresenter extends MVPBasePresenter<IDataConfContract.DataCo
         implements IDataConfContract.IDataConfPresenter
 {
     private String confID;
+
+    private String[] broadcastNames = new String[]{CustomBroadcastConstants.CONF_MSG_ON_CONFERENCE_TERMINATE};
+
+    private LocBroadcastReceiver receiver = new LocBroadcastReceiver() {
+        @Override
+        public void onReceive(String broadcastName, Object obj) {
+            switch (broadcastName) {
+                case CustomBroadcastConstants.CONF_MSG_ON_CONFERENCE_TERMINATE:
+                    getView().finishActivity();
+                    break;
+            }
+        }
+    };
 
     @Override
     public void attachSurfaceView(ViewGroup container, Context context)
@@ -91,5 +107,15 @@ public class DataConfPresenter extends MVPBasePresenter<IDataConfContract.DataCo
         Member self = MeetingMgr.getInstance().getCurrentConferenceSelf();
 
         return (self.getRole() == ConfConstant.ConfRole.ATTENDEE ? false:true);
+    }
+
+    @Override
+    public void registerBroadcast() {
+        LocBroadcast.getInstance().registerBroadcast(receiver, broadcastNames);
+    }
+
+    @Override
+    public void unregisterBroadcast() {
+        LocBroadcast.getInstance().unRegisterBroadcast(receiver, broadcastNames);
     }
 }
