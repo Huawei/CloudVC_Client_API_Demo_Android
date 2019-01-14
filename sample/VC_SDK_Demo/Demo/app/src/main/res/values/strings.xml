@@ -2089,6 +2089,8 @@ ekistan,998,218|Vanuatu,678,318|Vatican,379,298|Venezuela,58,213|Viet Nam,84,241
     <string name="enter_meeting_nowifi_tip">Direct VoIP and data meetings are supported only over Wi-Fi networks.</string>
     <string name="data_conf_call">Data meeting invitation from %1$s</string>
     <string name="change_password">Change Password</string>
+    <string name="new_password">New Password</string>
+    <string name="old_password">Old Password</string>
     <string name="account_security">Account and Security</string>
     <string name="conf_attendee_redial">Redial</string>
     <string name="conference_video_calling">Video meeting invitation…</string>

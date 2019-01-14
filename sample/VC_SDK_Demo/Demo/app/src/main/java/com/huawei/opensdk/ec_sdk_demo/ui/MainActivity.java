@@ -3,6 +3,7 @@ package com.huawei.opensdk.ec_sdk_demo.ui;
 import android.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -21,6 +22,7 @@ import com.huawei.opensdk.ec_sdk_demo.ui.discover.DiscoverFragment;
 import com.huawei.opensdk.ec_sdk_demo.util.ActivityUtil;
 import com.huawei.opensdk.ec_sdk_demo.widget.BaseDialog;
 import com.huawei.opensdk.ec_sdk_demo.widget.ConfirmDialog;
+import com.huawei.opensdk.ec_sdk_demo.widget.ThreeInputDialog;
 import com.huawei.opensdk.loginmgr.LoginMgr;
 import com.huawei.opensdk.sdkwrapper.login.LoginCenter;
 
@@ -66,6 +68,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener
 
         LinearLayout settingButton = (LinearLayout) findViewById(R.id.iv_setting);
 
+        //暂时只在SMC下支持修改密码
+        if (LoginCenter.getInstance().getServerType() == LoginCenter.getInstance().LOGIN_E_SERVER_TYPE_SMC){
+            LinearLayout changePwdButton = (LinearLayout) findViewById(R.id.iv_change_pwd);
+            changePwdButton.setOnClickListener(this);
+        }
+
         displayName = (TextView) findViewById(R.id.blog_name_tv);
         sipNumber = (TextView) findViewById(R.id.blog_number_tv);
         sipNumber.setSelected(true);
@@ -75,6 +83,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener
         initIndicator();
         initViewPager();
         initDrawerShow();
+
 
         settingButton.setOnClickListener(this);
         logoutButton.setOnClickListener(this);
@@ -199,6 +208,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener
             case R.id.right_img:
                 ActivityUtil.startActivity(MainActivity.this, IntentConstant.IM_SEARCH_ACTIVITY_ACTION);
                 break;
+            case R.id.iv_change_pwd:
+                showAddMemberDialog();
+                break;
             default:
                 break;
         }
@@ -234,6 +246,33 @@ public class MainActivity extends BaseActivity implements View.OnClickListener
             });
         }
         mLogoutDialog.show();
+    }
+
+    private void showAddMemberDialog()
+    {
+        final ThreeInputDialog addMemberDialog = new ThreeInputDialog(this);
+        addMemberDialog.setRightButtonListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                if (TextUtils.isEmpty(addMemberDialog.getInput1())
+                        || TextUtils.isEmpty(addMemberDialog.getInput2()))
+                {
+                    showToast(R.string.invalid_password);
+                    return;
+                }
+
+                LoginMgr.getInstance().changePassword(
+                        addMemberDialog.getInput1(),
+                        addMemberDialog.getInput2(),
+                        addMemberDialog.getInput3());
+            }
+        });
+        addMemberDialog.setHint1(R.string.new_password);
+        addMemberDialog.setHint2(R.string.old_password);
+        addMemberDialog.setHint3(R.string.input_account);
+        addMemberDialog.show();
     }
 
     @Override

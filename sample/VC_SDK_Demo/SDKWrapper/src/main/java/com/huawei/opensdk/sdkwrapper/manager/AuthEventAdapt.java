@@ -99,7 +99,12 @@ class AuthEventAdapt implements TupLoginNotify {
         if (authNotify != null) {
             authNotify.onPasswordChangeResult(tupLoginOptResult);
         }
-
+        if(null == tupLoginOptResult){
+            return;
+        }
+        if (tupLoginOptResult.getOptResult() == 0){
+            LoginCenter.getInstance().logout();
+        }
     }
 
     @Override

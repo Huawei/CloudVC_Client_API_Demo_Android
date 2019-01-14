@@ -106,7 +106,6 @@ public class ConfManagerActivity extends MVPBaseActivity<IConfManagerContract.IC
         btnMoreIV.setVisibility(View.GONE);
         btnVideoIV.setVisibility(View.GONE);
         btnShareIV.setVisibility(View.GONE);
-        existConfIV.setVisibility(View.GONE);
 
 
         existConfIV.setOnClickListener(this);
@@ -424,7 +423,6 @@ public class ConfManagerActivity extends MVPBaseActivity<IConfManagerContract.IC
         muteSelfIV.setVisibility(View.VISIBLE);
         loudSpeakerIV.setVisibility(View.VISIBLE);
         btnMoreIV.setVisibility(View.VISIBLE);
-        existConfIV.setVisibility(View.VISIBLE);
         if(isVideoIV){
             btnVideoIV.setVisibility(View.VISIBLE);
         }

@@ -75,5 +75,31 @@
         <View android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:background="#dddddd"/>
+
+        <LinearLayout android:id="@+id/iv_change_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/icon_key"/>
+
+            <TextView android:id="@+id/tv_change"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:gravity="center_vertical"
+                android:text="@string/change_password"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#dddddd"/>
+
     </LinearLayout>
 </android.support.v4.widget.DrawerLayout>

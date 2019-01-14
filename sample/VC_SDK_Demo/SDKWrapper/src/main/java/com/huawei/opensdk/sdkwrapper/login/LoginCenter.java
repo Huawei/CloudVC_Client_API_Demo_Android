@@ -7,8 +7,11 @@ import com.huawei.opensdk.sdkwrapper.manager.TupMgr;
 import com.huawei.tup.confctrl.ConfctrlConfEnvType;
 import com.huawei.tup.login.LoginAuthorizeParam;
 import com.huawei.tup.login.LoginAuthorizeResult;
+import com.huawei.tup.login.LoginChangePwdParam;
 import com.huawei.tup.login.LoginDetectServer;
 import com.huawei.tup.login.LoginFirewallMode;
+import com.huawei.tup.login.LoginProtocolType;
+import com.huawei.tup.login.LoginServerType;
 import com.huawei.tup.login.LoginSingleServerInfo;
 import com.huawei.tup.login.LoginSmcAuthorizeResult;
 import com.huawei.tup.login.LoginStgParam;
@@ -208,6 +211,30 @@ public class LoginCenter {
         }
 
         return ret;
+    }
+
+    /**
+     * This method is used to change password
+     * 修改密码
+     *
+     * @param newPassword       新密码
+     * @param oldPassword       旧密码
+     * @param account           登录账号
+     */
+    public void changePassword(String newPassword, String oldPassword, String account )
+    {
+        LoginChangePwdParam changePwdParam = new LoginChangePwdParam();
+        changePwdParam.setNewPassword(newPassword);
+        changePwdParam.setOldPassword(oldPassword);
+        changePwdParam.setAccount(account);
+        changePwdParam.setNumber(account);
+        changePwdParam.setPort(443);
+        changePwdParam.setServer(loginServerAddress);
+        changePwdParam.setProtocol(LoginProtocolType.LOGIN_D_PROTOCOL_TYPE_SIP);
+        changePwdParam.setServerType(LoginServerType.LOGIN_E_SERVER_TYPE_SMC);
+
+
+        TupMgr.getInstance().getAuthManagerIns().changeRegisterPassword(changePwdParam);
     }
 
     /**

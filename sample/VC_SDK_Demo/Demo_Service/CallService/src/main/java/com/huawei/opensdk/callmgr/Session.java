@@ -346,6 +346,13 @@ public class Session {
             videoRenderInfo.setUlMirrortype(2);
             tupCall.setMobileVideoRender(videoRenderInfo);
         }
+        else
+        {
+            VideoRenderInfo videoRenderInfo = new VideoRenderInfo();
+            videoRenderInfo.setRederType(VideoWndType.local);
+            videoRenderInfo.setUlMirrortype(0);
+            tupCall.setMobileVideoRender(videoRenderInfo);
+        }
 
         return true;
     }

@@ -8,7 +8,6 @@ import android.util.Log;
 
 import com.huawei.opensdk.commonservice.util.DeviceManager;
 import com.huawei.opensdk.commonservice.util.LogUtil;
-import com.huawei.opensdk.sdkwrapper.login.ConfConfigInfo;
 import com.huawei.opensdk.sdkwrapper.login.ITupLoginCenterNotify;
 import com.huawei.opensdk.sdkwrapper.login.LoginCenter;
 import com.huawei.opensdk.sdkwrapper.login.LoginEvent;
@@ -16,12 +15,10 @@ import com.huawei.opensdk.sdkwrapper.login.LoginResult;
 import com.huawei.opensdk.sdkwrapper.login.LoginStatus;
 import com.huawei.opensdk.sdkwrapper.login.SipAccountInfo;
 import com.huawei.opensdk.sdkwrapper.manager.TupMgr;
-import com.huawei.tup.confctrl.ConfctrlConfEnvType;
 import com.huawei.tup.login.LoginAuthInfo;
 import com.huawei.tup.login.LoginAuthServerInfo;
 import com.huawei.tup.login.LoginAuthType;
 import com.huawei.tup.login.LoginAuthorizeParam;
-import com.huawei.tup.login.LoginFirewallMode;
 import com.huawei.tup.login.LoginServerType;
 
 /**
@@ -154,6 +151,19 @@ public class LoginMgr implements ITupLoginCenterNotify
     public void logout()
     {
         LoginCenter.getInstance().logout();
+    }
+
+    /**
+     * This method is used to change password
+     * 修改密码
+     *
+     * @param newPassword       新密码
+     * @param oldPassword       旧密码
+     * @param account           登录账号
+     */
+    public void changePassword(String newPassword, String oldPassword, String account)
+    {
+        LoginCenter.getInstance().changePassword(newPassword,oldPassword,account);
     }
 
 

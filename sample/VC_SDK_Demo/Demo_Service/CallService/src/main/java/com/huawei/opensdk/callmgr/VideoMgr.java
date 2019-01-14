@@ -232,6 +232,11 @@ public class VideoMgr {
             setCurrentCameraIndex(cameraIndex);
         }
 
+        if (orientationDetector != null)
+        {
+            orientationDetector.updateRotation(true);
+        }
+
         return result;
     }
 
@@ -533,7 +538,7 @@ public class VideoMgr {
          *
          * @param isForce 是否是强制更新
          */
-        private void updateRotation(boolean isForce) {
+        public void updateRotation(boolean isForce) {
             int deviceOrientation = getOrientation(curOriginalOrientation);
 
             // 强制设置旋转，或与上一次不一样的区间，则进行更新设置旋转角度
