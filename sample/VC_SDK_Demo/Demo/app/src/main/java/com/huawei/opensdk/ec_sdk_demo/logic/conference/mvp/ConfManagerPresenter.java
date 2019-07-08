@@ -1,7 +1,16 @@
 package com.huawei.opensdk.ec_sdk_demo.logic.conference.mvp;
 
+import android.content.Context;
+import android.os.Handler;
+import android.os.Message;
+import android.view.SurfaceView;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.huawei.opensdk.callmgr.CallConstant;
 import com.huawei.opensdk.callmgr.CallInfo;
 import com.huawei.opensdk.callmgr.CallMgr;
+import com.huawei.opensdk.callmgr.VideoMgr;
 import com.huawei.opensdk.commonservice.common.LocContext;
 import com.huawei.opensdk.commonservice.localbroadcast.CustomBroadcastConstants;
 import com.huawei.opensdk.commonservice.localbroadcast.LocBroadcast;
@@ -13,6 +22,7 @@ import com.huawei.opensdk.demoservice.MeetingMgr;
 import com.huawei.opensdk.demoservice.Member;
 import com.huawei.opensdk.ec_sdk_demo.R;
 import com.huawei.opensdk.ec_sdk_demo.common.UIConstants;
+import com.huawei.opensdk.ec_sdk_demo.logic.call.CallFunc;
 import com.huawei.opensdk.ec_sdk_demo.ui.base.MVPBasePresenter;
 import com.huawei.tup.confctrl.sdk.TupConference;
 
@@ -24,6 +34,7 @@ public class ConfManagerPresenter extends MVPBasePresenter<IConfManagerContract.
         implements IConfManagerContract.IConfManagerPresenter
 {
     private String confID;
+    private int mCameraIndex = CallConstant.FRONT_CAMERA;
 
     private String[] broadcastNames = new String[]{CustomBroadcastConstants.CONF_STATE_UPDATE,
             CustomBroadcastConstants.CONF_CHAIRMAN_INFO,
@@ -61,7 +72,29 @@ public class ConfManagerPresenter extends MVPBasePresenter<IConfManagerContract.
             CustomBroadcastConstants.GET_CONF_END,
             CustomBroadcastConstants.WATCH_ATTENDEE_CONF_RESULT,
             CustomBroadcastConstants.BROADCAST_ATTENDEE_CONF_RESULT,
-            CustomBroadcastConstants.CANCEL_BROADCAST_ATTENDEE_CONF_RESULT};
+            CustomBroadcastConstants.CANCEL_BROADCAST_ATTENDEE_CONF_RESULT,
+            CustomBroadcastConstants.ADD_LOCAL_VIEW,
+            CustomBroadcastConstants.DEL_LOCAL_VIEW,};
+
+    private static final int ADD_LOCAL_VIEW = 101;
+
+    private Handler mHandler = new Handler()
+    {
+        @Override
+        public void handleMessage(Message msg)
+        {
+            switch (msg.what)
+            {
+                case ADD_LOCAL_VIEW:
+                    //setVideoContainer(false);
+                    getView().updateLocalVideo();
+                    break;
+
+                default:
+                    break;
+            }
+        }
+    };
 
     private LocBroadcastReceiver receiver = new LocBroadcastReceiver()
     {
@@ -430,6 +463,12 @@ public class ConfManagerPresenter extends MVPBasePresenter<IConfManagerContract.
                     }
                     break;
 
+                case CustomBroadcastConstants.ADD_LOCAL_VIEW:
+                    mHandler.sendEmptyMessage(ADD_LOCAL_VIEW);
+                    break;
+
+                case CustomBroadcastConstants.DEL_LOCAL_VIEW:
+                    break;
 
                 default:
                     break;
@@ -609,10 +648,9 @@ public class ConfManagerPresenter extends MVPBasePresenter<IConfManagerContract.
 //    }
 
     @Override
-    public void switchLoudSpeaker()
+    public int switchLoudSpeaker()
     {
-        int type = CallMgr.getInstance().switchAudioRoute();
-        getView().updateLoudSpeakerButton(type);
+        return CallMgr.getInstance().switchAudioRoute();
     }
 
     @Override
@@ -951,4 +989,116 @@ public class ConfManagerPresenter extends MVPBasePresenter<IConfManagerContract.
         return false;
     }
 
+    @Override
+    public void setVideoContainer(Context context, ViewGroup smallLayout, ViewGroup bigLayout, ViewGroup hideLayout) {
+        if (bigLayout != null) {
+            addSurfaceView(bigLayout, VideoMgr.getInstance().getRemoteVideoView());
+        }
+
+        if (smallLayout != null) {
+            addSurfaceView(smallLayout, VideoMgr.getInstance().getLocalVideoView());
+        }
+
+        if (hideLayout != null) {
+            addSurfaceView(hideLayout, VideoMgr.getInstance().getLocalHideView());
+        }
+    }
+
+    private void addSurfaceView(ViewGroup container, SurfaceView child)
+    {
+        if (child == null)
+        {
+            return;
+        }
+        if (child.getParent() != null)
+        {
+            ViewGroup vGroup = (ViewGroup) child.getParent();
+            vGroup.removeAllViews();
+        }
+        container.addView(child);
+    }
+
+    @Override
+    public void setAutoRotation(Object object, boolean isOpen, int orientation) {
+        VideoMgr.getInstance().setAutoRotation(object, isOpen, orientation);
+    }
+
+    @Override
+    public void changeLocalVideoVisible(boolean visible) {
+        if (visible) {
+            //重新显示本地窗口，无需再打开本地视频
+            VideoMgr.getInstance().getLocalVideoView().setVisibility(View.VISIBLE);
+        } else {
+            //只隐藏本地窗口，并不关闭本地视频
+            VideoMgr.getInstance().getLocalVideoView().setVisibility(View.GONE);
+        }
+    }
+
+    @Override
+    public boolean closeOrOpenLocalVideo(boolean close) {
+        int callID = MeetingMgr.getInstance().getCurrentConferenceCallID();
+        if (callID == 0) {
+            return false;
+        }
+
+        if (close) {
+            CallMgr.getInstance().closeCamera(callID);
+        } else {
+            CallMgr.getInstance().openCamera(callID);
+            VideoMgr.getInstance().setVideoOrient(callID, CallConstant.FRONT_CAMERA);
+        }
+
+        return true;
+    }
+
+    @Override
+    public List<Member> getMemberList() {
+        return MeetingMgr.getInstance().getCurrentConferenceMemberList();
+    }
+
+    @Override
+    public void watchAttendee(Member member) {
+        int result = MeetingMgr.getInstance().watchAttendee(member);
+        if (0 != result)
+        {
+            getView().showCustomToast(R.string.watch_conf_fail);
+        }
+    }
+
+    @Override
+    public void switchCamera() {
+        int callID = MeetingMgr.getInstance().getCurrentConferenceCallID();
+        if (callID == 0) {
+            return;
+        }
+
+        mCameraIndex = CallConstant.FRONT_CAMERA == mCameraIndex ?
+                CallConstant.BACK_CAMERA : CallConstant.FRONT_CAMERA;
+
+        CallMgr.getInstance().switchCamera(callID, mCameraIndex);
+    }
+
+    @Override
+    public void unregisterBroadcast() {
+        LocBroadcast.getInstance().unRegisterBroadcast(receiver, broadcastNames);
+    }
+
+    public String getSubject()
+    {
+        return MeetingMgr.getInstance().getCurrentConferenceBaseInfo().getSubject();
+    }
+
+    @Override
+    public void endCall(int callID) {
+        CallMgr.getInstance().endCall(callID);
+    }
+
+    @Override
+    public void muteCall(int callID) {
+        boolean currentMuteStatus = CallFunc.getInstance().isMuteStatus();
+        if (CallMgr.getInstance().muteMic(callID, !currentMuteStatus)) {
+            CallFunc.getInstance().setMuteStatus(!currentMuteStatus);
+            getView().switchMuteBtn(currentMuteStatus);
+        }
+    }
 }

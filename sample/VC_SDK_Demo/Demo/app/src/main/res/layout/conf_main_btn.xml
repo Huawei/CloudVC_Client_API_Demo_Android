@@ -12,7 +12,8 @@
         <FrameLayout android:id="@+id/conf_hangup"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1.0">
+            android:layout_weight="1.0"
+            android:visibility="gone">
 
             <ImageView android:id="@+id/conf_hangup_iv"
                 android:layout_width="65dp"
@@ -54,19 +55,19 @@
                 android:src="@drawable/audio_bg_loudhailer"/>
         </FrameLayout>
 
-        <FrameLayout android:id="@+id/conf_update"
+        <FrameLayout android:id="@+id/conf_add_attendee"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1.0">
 
-            <ImageView android:id="@+id/conf_update_iv"
+            <ImageView android:id="@+id/conf_add_attendee_iv"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
                 android:layout_gravity="center"
                 android:focusable="false"
                 android:padding="6dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/audio_bg_multi"/>
+                android:src="@drawable/audio_bg_add"/>
         </FrameLayout>
 
         <FrameLayout android:id="@+id/conf_more"
@@ -74,7 +75,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1.0">
 
-            <ImageView android:id="@+id/conf_btn_more"
+            <ImageView android:id="@+id/conf_btn_more_iv"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
                 android:layout_gravity="center"

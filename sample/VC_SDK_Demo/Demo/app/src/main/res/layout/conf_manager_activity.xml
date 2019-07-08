@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/darker_gray">
+
+    <include layout="@layout/conference_video"
+        android:id="@+id/conference_video_layout"/>
+
+    <include layout="@layout/title_transparent"/>
+
+    <RelativeLayout
+        android:id="@+id/audio_conf_layout_logo"
+        android:layout_marginTop="@dimen/dp170"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_audio_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/conf_voice_head_small"/>
+
+        <TextView
+            android:id="@+id/tv_audio_conf_attendee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="@dimen/dp8"
+            android:textColor="#000000"
+            android:layout_below="@id/iv_audio_logo"
+            android:textSize="16sp"
+            android:ellipsize="end"
+            android:maxLines="1"/>
+    </RelativeLayout>
+
+    <include layout="@layout/video_conf_main_btn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

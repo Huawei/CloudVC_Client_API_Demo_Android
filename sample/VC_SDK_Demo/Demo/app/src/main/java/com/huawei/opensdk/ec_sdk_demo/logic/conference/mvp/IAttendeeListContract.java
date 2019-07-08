@@ -1,6 +1,7 @@
 package com.huawei.opensdk.ec_sdk_demo.logic.conference.mvp;
 
 import android.content.Context;
+import android.view.SurfaceView;
 import android.view.ViewGroup;
 
 import com.huawei.opensdk.demoservice.ConfBaseInfo;
@@ -10,17 +11,19 @@ import com.huawei.opensdk.ec_sdk_demo.logic.BaseView;
 import java.util.List;
 
 
-public interface IConfManagerContract
+public interface IAttendeeListContract
 {
-    interface IConfManagerView extends BaseView
+    interface IAttendeeListView extends BaseView
     {
         void refreshMemberList(List<Member> list);
 
-        void updateButtons(Member conferenceMemberEntity);
+        void updateAddAttendeeButton(boolean isChairman);
 
-//        void updateLoudSpeakerButton(int type);
+        void updateMuteButton(boolean isMute);
 
-//        void updateTitle(String title);
+        void updateLoudSpeakerButton(int type);
+
+        void updateTitle(String title);
 
         void showItemClickDialog(List<Object> items, Member member);
 
@@ -28,21 +31,20 @@ public interface IConfManagerContract
 
         void updateConfTypeIcon(ConfBaseInfo confBaseInfo);
 
-        //之前判断是否在数据会议中是通过数据会议入会结果判断的，现在是通过加入数据会议回调判断
-//        void updateDataConfBtn(boolean show);
-
-//        void updateVideoBtn(boolean show);
+        void updateVideoBtn(boolean show);
 
         void updateUpgradeConfBtn(boolean isInDataConf);
 
-        void updateLocalVideo();
+        void showMessage(String message);
 
-        void switchMuteBtn(boolean currentMuteStatus);
+        void updateSpeaker(String[] speakers, boolean noSpeaker);
     }
 
-    interface IConfManagerPresenter
+    interface IAttendeeListPresenter
     {
         void registerBroadcast();
+
+        void unregisterBroadcast();
 
         String getConfID();
 
@@ -58,19 +60,17 @@ public interface IConfManagerContract
 
         void delMember(Member member);
 
-        void hangupMember(Member member);
-
         void muteSelf();
 
         void muteMember(Member member, boolean isMute);
 
-//        void muteConf(boolean isMute);
+        void muteConf(boolean isMute);
 
-//        void lockConf(boolean islock);
+        void lockConf(boolean islock);
 
-//        void handUpSelf();
+        void handUpSelf();
 
-//        void cancelMemberHandUp(Member member);
+        void cancelMemberHandUp(Member member);
 
         void requestChairman(String chairmanPassword);
 
@@ -82,15 +82,13 @@ public interface IConfManagerContract
 
         void switchConfMode();
 
-        void broadcastMember(Member member, boolean isBroad);
-
-        void watchMember(Member member);
+        void broadcastMember(Member member);
 
         void setPresenter(Member member);
 
         void setHost(Member member);
 
-        int switchLoudSpeaker();
+        void switchLoudSpeaker();
 
         void onItemClick(int position);
 
@@ -98,7 +96,7 @@ public interface IConfManagerContract
 
         boolean isChairMan();
 
-//        boolean isHandUp();
+        boolean isHandUp();
 
         boolean isInDataConf();
 
@@ -110,25 +108,21 @@ public interface IConfManagerContract
 
 //        boolean isConfLock();
 
-        void setVideoContainer(Context context, ViewGroup smallLayout, ViewGroup bigLayout, ViewGroup hideLayout);
+        List<Member> updateAttendeeList();
 
-        void setAutoRotation(Object object, boolean isOpen, int orientation);
+        ConfBaseInfo updateConfBaseInfo();
 
-        void changeLocalVideoVisible(boolean visible);
+        Member selfInfo();
 
-        boolean closeOrOpenLocalVideo(boolean close);
+        boolean isMuteSelf();
 
-        List<Member> getMemberList();
+        void setVideoContainer(Context context, ViewGroup smallLayout, ViewGroup hideLayout);
 
-        void watchAttendee(Member member);
+        SurfaceView getHideVideoView();
 
-        void switchCamera();
+        SurfaceView getLocalVideoView();
 
-        void unregisterBroadcast();
-
-        void endCall(int callID);
-
-        void muteCall(int callID);
+        void broadcastAttendee(Member member, boolean isBroad);
 
     }
 }

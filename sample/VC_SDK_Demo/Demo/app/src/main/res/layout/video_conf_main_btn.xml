@@ -54,33 +54,93 @@
                 android:src="@drawable/audio_bg_loudhailer"/>
         </FrameLayout>
 
-        <FrameLayout android:id="@+id/switch_camera"
+        <!--<FrameLayout android:id="@+id/switch_camera"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="1.0">-->
+
+        <!--<ImageView android:id="@+id/switch_camera_iv"-->
+        <!--android:layout_width="60dp"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:focusable="false"-->
+        <!--android:padding="6dp"-->
+        <!--android:scaleType="centerInside"-->
+        <!--android:src="@drawable/icon_switchvideo_disable"/>-->
+        <!--</FrameLayout>-->
+
+        <!--<FrameLayout android:id="@+id/btn_more"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="1.0">-->
+
+        <!--<ImageView android:id="@+id/conf_btn_close_local"-->
+        <!--android:layout_width="60dp"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:focusable="false"-->
+        <!--android:padding="6dp"-->
+        <!--android:src="@drawable/video_data_change_visible"/>-->
+        <!--</FrameLayout>-->
+
+        <!--<FrameLayout android:id="@+id/conf_update"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="1.0">-->
+
+        <!--<ImageView android:id="@+id/conf_update_iv"-->
+        <!--android:layout_width="60dp"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:focusable="false"-->
+        <!--android:padding="6dp"-->
+        <!--android:scaleType="centerInside"-->
+        <!--android:src="@drawable/audio_bg_multi"/>-->
+        <!--</FrameLayout>-->
+
+        <FrameLayout android:id="@+id/conf_add_attendee"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1.0">
 
-            <ImageView android:id="@+id/switch_camera_iv"
+            <ImageView android:id="@+id/conf_add_attendee_iv"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:focusable="false"
                 android:padding="6dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/icon_switchvideo_disable"/>
+                android:src="@drawable/audio_bg_add"/>
         </FrameLayout>
 
-        <FrameLayout android:id="@+id/btn_more"
+        <FrameLayout android:id="@+id/conf_attendee"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1.0">
 
-            <ImageView android:id="@+id/conf_btn_close_local"
+            <ImageView android:id="@+id/conf_btn_attendee"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:focusable="false"
                 android:padding="6dp"
-                android:src="@drawable/video_data_change_visible"/>
+                android:src="@drawable/icon_attendees_normal"/>
+        </FrameLayout>
+
+        <FrameLayout android:id="@+id/btn_conf_more"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0">
+
+            <ImageView android:id="@+id/conf_btn_more"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:focusable="false"
+                android:padding="6dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/audio_bg_more"
+                android:visibility="visible"/>
         </FrameLayout>
     </LinearLayout>
 

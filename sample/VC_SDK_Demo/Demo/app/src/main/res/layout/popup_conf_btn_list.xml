@@ -5,208 +5,331 @@
     android:background="@color/bwhite"
     android:orientation="vertical">
 
-    <!--添加与会者-->
-    <LinearLayout android:id="@+id/add_attendee_ll"
+    <!--切换摄像头-->
+    <LinearLayout android:id="@+id/switch_camera_ll"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:padding="12dp"
-            android:src="@drawable/media_add_contact"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="@string/add_contact"
-            android:textSize="14sp"/>
+            <ImageView android:id="@+id/iv_camera_switch"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="12dp"
+                android:src="@drawable/icon_switchvideo_disable"/>
 
+            <TextView android:id="@+id/tv_camera_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/switch_camera"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ffffff"/>
     </LinearLayout>
 
-    <View android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#ffffff"/>
+    <!--关闭摄像头-->
+    <LinearLayout android:id="@+id/close_camera_ll"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView android:id="@+id/iv_camera_status"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="12dp"
+                android:src="@drawable/video_data_change_visible"/>
+
+            <TextView android:id="@+id/tv_camera_status"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/close_local_camera"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ffffff"/>
+    </LinearLayout>
 
     <!--举手-->
     <LinearLayout android:id="@+id/hand_up_ll"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/hand_up_iv"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:padding="12dp"
-            android:src="@drawable/conf_hand_up"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/hand_up_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="@string/conf_hand_up"
-            android:textSize="14sp"/>
+            <ImageView
+                android:id="@+id/hand_up_iv"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="12dp"
+                android:src="@drawable/conf_hand_up"/>
+
+            <TextView
+                android:id="@+id/hand_up_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/conf_hand_up"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ffffff"/>
     </LinearLayout>
-
-    <!--<View android:layout_width="match_parent"-->
-        <!--android:layout_height="1dp"-->
-        <!--android:background="#ffffff"/>-->
 
     <!--全场静音-->
     <LinearLayout android:id="@+id/mute_all_ll"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:padding="12dp"
-            android:src="@drawable/pop_icon_conf_mute"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="@string/mute_full_conf"
-            android:textSize="14sp"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="12dp"
+                android:src="@drawable/pop_icon_conf_mute"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/mute_full_conf"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ffffff"/>
     </LinearLayout>
-
-    <!--<View android:layout_width="match_parent"-->
-        <!--android:layout_height="1dp"-->
-        <!--android:background="#ffffff"/>-->
 
     <!--取消全场静音-->
     <LinearLayout android:id="@+id/cancel_mute_all_ll"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:padding="12dp"
-            android:src="@drawable/pop_icon_conf_mute_off"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="@string/cancel_mute_full_conf"
-            android:textSize="14sp"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="12dp"
+                android:src="@drawable/pop_icon_conf_mute_off"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/cancel_mute_full_conf"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ffffff"/>
     </LinearLayout>
-
-    <!--<View android:layout_width="match_parent"-->
-        <!--android:layout_height="1dp"-->
-        <!--android:background="#ffffff"/>-->
 
     <!--锁定会议-->
     <LinearLayout android:id="@+id/lock_conf_ll"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:padding="12dp"
-            android:src="@drawable/icon_lock"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="@string/lock_conf"
-            android:textSize="14sp"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="12dp"
+                android:src="@drawable/icon_conf_lock"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/lock_conf"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ffffff"/>
     </LinearLayout>
-
-    <!--<View android:layout_width="match_parent"-->
-        <!--android:layout_height="1dp"-->
-        <!--android:background="#ffffff"/>-->
 
     <!--取消锁定会议-->
     <LinearLayout android:id="@+id/un_lock_conf_ll"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:padding="12dp"
-            android:src="@drawable/icon_lock"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="@string/unlock_conf"
-            android:textSize="14sp"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="12dp"
+                android:src="@drawable/icon_conf_unlock"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/unlock_conf"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ffffff"/>
     </LinearLayout>
-
-    <!--<View android:layout_width="match_parent"-->
-        <!--android:layout_height="1dp"-->
-        <!--android:background="#ffffff"/>-->
 
     <!--申请主席-->
     <LinearLayout android:id="@+id/request_chairman_ll"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/request_chairman_iv"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:padding="12dp"
-            android:src="@drawable/request_chairman"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/request_chairman_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="@string/conf_request_chairman"
-            android:textSize="14sp"/>
+            <ImageView
+                android:id="@+id/request_chairman_iv"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="12dp"
+                android:src="@drawable/request_chairman"/>
+
+            <TextView
+                android:id="@+id/request_chairman_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/conf_request_chairman"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ffffff"/>
     </LinearLayout>
 
-    <View android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#ffffff"/>
+    <!--升级会议-->
+    <LinearLayout android:id="@+id/upgrade_conf_ll"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="12dp"
+                android:src="@drawable/icon_update_mult"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/upgrade_conf"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ffffff"/>
+    </LinearLayout>
 
     <!--释放主席-->
     <LinearLayout android:id="@+id/release_chairman_ll"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/release_chairman_iv"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:padding="12dp"
-            android:src="@drawable/request_chairman"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/release_chairman_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="@string/conf_release_chairman"
-            android:textSize="14sp"/>
+            <ImageView
+                android:id="@+id/release_chairman_iv"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="12dp"
+                android:src="@drawable/request_chairman"/>
+
+            <TextView
+                android:id="@+id/release_chairman_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/conf_release_chairman"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ffffff"/>
     </LinearLayout>
 
-    <View android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#ffffff"/>
+    <!--设置会议模式-->
+    <LinearLayout android:id="@+id/set_conf_mode_ll"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/conf_mode_iv"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="12dp"
+                android:src="@drawable/setting_more"/>
+
+            <TextView
+                android:id="@+id/conf_mode_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/set_conf_mode"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ffffff"/>
+    </LinearLayout>
 
 </LinearLayout>

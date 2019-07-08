@@ -5,7 +5,7 @@
     android:layout_height="fill_parent" >
 
     <FrameLayout
-        android:id="@+id/conf_share_layout"
+        android:id="@+id/conf_remote_video_layout"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:background="@android:color/darker_gray" >
@@ -13,14 +13,13 @@
 
     <FrameLayout
         android:id="@+id/conf_video_small_logo"
-        android:layout_width="134.67dp"
-        android:layout_height="101.33dp"
+        android:layout_width="90dp"
+        android:layout_height="160dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="70dp"
-        android:layout_marginRight="6.6dp"
-        android:background="#666666">
-    </FrameLayout>
+        android:layout_marginRight="10dp"
+        android:background="#666666"></FrameLayout>
 
     <FrameLayout
         android:id="@+id/hide_video_view"
@@ -32,13 +31,11 @@
         android:id="@+id/local_video_hide"
         android:layout_width="34dp"
         android:layout_height="34dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_above="@+id/conf_video_small_logo"
-        android:layout_marginBottom="137.33dp"
-        android:layout_marginRight="107.27dip"
-        android:background="@drawable/selector_btn_video_window_close">
-    </FrameLayout>
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_alignTop="@+id/conf_video_small_logo"
+        android:layout_alignLeft="@+id/conf_video_small_logo"
+        android:background="@drawable/selector_btn_video_window_close"></FrameLayout>
 
     <FrameLayout
         android:id="@+id/local_video_hide_cancel"

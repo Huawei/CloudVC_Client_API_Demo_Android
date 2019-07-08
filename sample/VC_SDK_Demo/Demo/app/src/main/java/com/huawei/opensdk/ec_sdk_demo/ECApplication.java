@@ -31,7 +31,7 @@ public class ECApplication extends Application
 {
     private static final int EXPECTED_FILE_LENGTH = 7;
 
-    private static final String FRONT_PKG = "com.huawei.opensdk.ec_sdk_demo";
+    private static final String FRONT_PKG = "com.huawei.opensdk.vc_sdk_demo";
 
     @Override
     public void onCreate()

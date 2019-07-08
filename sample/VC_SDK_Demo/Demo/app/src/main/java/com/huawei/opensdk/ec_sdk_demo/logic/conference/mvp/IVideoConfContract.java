@@ -41,7 +41,7 @@ public interface IVideoConfContract
 
         void setVideoContainer(Context context, ViewGroup smallLayout, ViewGroup bigLayout, ViewGroup hideLayout);
 
-        void setAutoRotation(Object object, boolean isOpen);
+        void setAutoRotation(Object object, boolean isOpen, int orientation);
 
         /**
          * 打开指定与会者的视频

@@ -258,20 +258,17 @@ public class MeetingInstance {
                     memberList.add(member);
                 }
             } else {
-                    member = getMemberByNumber(attendee.getMT());
-                if (!"".equals(attendee.getSiteName()))
-                {
-                    member.setNumber(attendee.getSiteName());
-                    member.setDisplayName(attendee.getSiteName());
-                    member.setAccountId(attendee.getSiteName());
-                    member.setMute(attendee.isMute());
-                    ConfConstant.ConfRole role = ((attendee.getRole() == ConfctrlConfRole.CONFCTRL_E_CONF_ROLE_CHAIRMAN) ?
+                member = getMemberByNumber(attendee.getMT());
+                member.setNumber(attendee.getNumber());
+                member.setDisplayName(attendee.getSiteName());
+                member.setAccountId(attendee.getNumber());
+                member.setMute(attendee.isMute());
+                ConfConstant.ConfRole role = ((attendee.getRole() == ConfctrlConfRole.CONFCTRL_E_CONF_ROLE_CHAIRMAN) ?
                             ConfConstant.ConfRole.CHAIRMAN : ConfConstant.ConfRole.ATTENDEE);
-                    member.setRole(role);
-                    if (judgeMemberIsSelf(member)) {
-                        member.setSelf(true);
-                        this.setSelf(member);
-                    }
+                member.setRole(role);
+                if (judgeMemberIsSelf(member)) {
+                    member.setSelf(true);
+                    this.setSelf(member);
                 }
                 switch (participantUpdateType){
                     case 0:

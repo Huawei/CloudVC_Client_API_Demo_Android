@@ -423,7 +423,7 @@ public class LoginCenter {
         confConfigInfo.setConfEnvType(ConfctrlConfEnvType.CONFCTRL_E_CONF_ENV_ON_PREMISE_VC);
 
         //设置会议服务器地址和端口号
-        if (null != loginSmcAuthorizeResult.getSmcServers())
+        if (null != loginSmcAuthorizeResult && null != loginSmcAuthorizeResult.getSmcServers())
         {
             confConfigInfo.setServerUri(loginSmcAuthorizeResult.getSmcServers().get(0).getServerUri());
             confConfigInfo.setServerPort(loginSmcAuthorizeResult.getSmcServers().get(0).getServerPort());

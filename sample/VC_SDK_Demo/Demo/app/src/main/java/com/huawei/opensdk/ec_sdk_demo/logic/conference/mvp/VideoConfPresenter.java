@@ -103,8 +103,8 @@ public class VideoConfPresenter extends VideoConfBasePresenter
     }
 
     @Override
-    public void setAutoRotation(Object object, boolean isOpen) {
-        VideoMgr.getInstance().setAutoRotation(object, isOpen, 2);
+    public void setAutoRotation(Object object, boolean isOpen, int orientation) {
+        VideoMgr.getInstance().setAutoRotation(object, isOpen, orientation);
     }
 
 

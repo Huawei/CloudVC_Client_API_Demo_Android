@@ -140,7 +140,7 @@ public class CrashUtil implements Thread.UncaughtExceptionHandler
             String mounted = Environment.MEDIA_MOUNTED;
             if (mounted.equals(Environment.getExternalStorageState()))
             {
-                String path = Environment.getExternalStorageDirectory() + "/" + "ECSDKDemoCrash" + "/" ;
+                String path = Environment.getExternalStorageDirectory() + "/" + "VCSDKDemoCrash" + "/" ;
                 File dir = new File(path);
                 if (!dir.exists())
                 {

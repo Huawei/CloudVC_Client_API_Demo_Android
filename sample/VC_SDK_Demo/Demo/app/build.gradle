@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         multiDexEnabled true
-        applicationId "com.huawei.opensdk.ec_sdk_demo"
+        applicationId "com.huawei.opensdk.vc_sdk_demo"
         minSdkVersion 14
         targetSdkVersion 22
         versionCode 1

@@ -417,7 +417,7 @@ public class MeetingMgr extends TupConfNotifyBase implements IMeetingMgr{
             return 0;
         }
 
-        currentConference.removeAttendee(getCurrentConferenceSelf());
+//        currentConference.removeAttendee(getCurrentConferenceSelf());
 
         int result = currentConference.leaveConf();
         if (result == 0) {

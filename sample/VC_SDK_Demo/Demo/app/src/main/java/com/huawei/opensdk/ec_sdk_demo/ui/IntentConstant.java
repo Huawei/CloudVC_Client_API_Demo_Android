@@ -17,8 +17,9 @@ public class IntentConstant
     public static String EADDR_BOOK_ACTIVITY_ACTION = "android.intent.action.eaddr_book_activity";
     public static String EADDR_INFO_ACTIVITY_ACTION = "android.intent.action.eaddr_info_activity";
     public static String IPT_REGISTER_ACTIVITY_ACTION = "android.intent.action.ipt_register_activity";
-    public static String Conf_DATA_ACTIVITY_ACTION = "android.intent.action.conf_data_activity";
     public static String VIDEO_CONF_ACTIVITY_ACTION = "android.intent.action.conf_video_activity";
+    public static final String CONF_DATA_ACTIVITY_ACTION = "android.intent.action.conf_data_activity";
+    public static final String CONF_MEMBER_LIST_ACTIVITY_ACTION = "android.intent.action.attendee_list_activity";
 
     //IM
     public static String IM_SEARCH_ACTIVITY_ACTION = "android.intent.action.im_search_activity";

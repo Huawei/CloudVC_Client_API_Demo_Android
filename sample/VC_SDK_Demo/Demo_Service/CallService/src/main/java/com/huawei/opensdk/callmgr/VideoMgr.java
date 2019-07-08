@@ -455,12 +455,16 @@ public class VideoMgr {
         private int layoutDirect = LAYOUT_PORTRAIT;
 
         /**
-         * 摄相头采集旋转方向
+         * 摄相头采集旋转方向，一般是设置本端显示方向选择
+         * 比如摄像头在上时，远端和本端窗口显示的图像都是图像朝下的。
+         * 修改此参数可以旋转本端窗口显示状态。（0:0度，1:90度，2:180度，3:270度）
          */
         private int cameraCaptureRotation;
 
         /**
-         * 视频窗口显示旋转方向
+         * 视频窗口显示旋转方向,一般是设置远端显示方向选择
+         * 比如摄像头在上时，远端和本端窗口显示的图像都是图像朝下的。
+         * 修改此参数可以旋转远端窗口显示状态。（0:0度，1:90度，2:180度，3:270度）
          */
         private int windowsDisplayRotation;
 
@@ -657,7 +661,7 @@ public class VideoMgr {
             } else {
                 // 前置后置摄像头旋转角度一致
                 cameraCaptureRotation = 2;
-                windowsDisplayRotation = 2;
+                windowsDisplayRotation = 0;
             }
         }
 
@@ -696,7 +700,8 @@ public class VideoMgr {
                     cameraCaptureRotation = 3;
                     windowsDisplayRotation = 2;
                 }
-            } else {
+            }
+            else {
                 if (VideoMgr.getInstance().getCurrentCameraIndex() == CallConstant.FRONT_CAMERA) {
                     cameraCaptureRotation = 1;
                     windowsDisplayRotation = 1;

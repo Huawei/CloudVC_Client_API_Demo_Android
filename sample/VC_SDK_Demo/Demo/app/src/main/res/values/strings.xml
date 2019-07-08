@@ -2155,4 +2155,12 @@ ekistan,998,218|Vanuatu,678,318|Vatican,379,298|Venezuela,58,213|Viet Nam,84,241
     <string name="vc_hosted">Hosted(MediaX)</string>
     <string name="vc_smc">On-premise(SMC)</string>
 
+    <string name="upgrade_conf">Upgrade conference</string>
+    <string name="set_conf_mode">Set Conference Mode</string>
+    <string name="voice_control_mode">Voice Control Mode</string>
+    <string name="broadcast_mode">Broadcast Mode</string>
+    <string name="free_mode">Free Mode</string>
+    <string name="main_conference">Main Conf Hall</string>
+    <string name="watch_conf_fail">Watch attendee failed</string>
+
 </resources>

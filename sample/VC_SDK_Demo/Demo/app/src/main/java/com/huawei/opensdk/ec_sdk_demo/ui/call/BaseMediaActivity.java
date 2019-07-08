@@ -372,6 +372,7 @@ public class BaseMediaActivity extends BaseActivity implements View.OnClickListe
                 Intent intent = new Intent(IntentConstant.CONF_MANAGER_ACTIVITY_ACTION);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra(UIConstants.CONF_ID, confID);
+                intent.putExtra(UIConstants.IS_VIDEO_CONF, callInfo.isVideoCall());
                 ActivityUtil.startActivity(LocContext.getContext(), intent);
                 finish();
                 break;

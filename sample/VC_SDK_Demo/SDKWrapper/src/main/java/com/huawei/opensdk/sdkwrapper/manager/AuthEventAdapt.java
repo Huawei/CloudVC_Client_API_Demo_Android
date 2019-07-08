@@ -262,6 +262,13 @@ class AuthEventAdapt implements TupLoginNotify {
         LoginCenter loginCenter = LoginCenter.getInstance();
         LoginFirewallMode firewallMode = LoginFirewallMode.LOGIN_E_FIREWALL_MODE_NULL;
 
+        //获取会议相关的配置信息
+        if (TupMgr.getInstance().getFeatureMgr().isSupportAudioAndVideoConf()) {
+            ConfConfigInfo confConfigInfo = loginCenter.getConfAccountInfoFromAuthResult(loginSmcAuthorizeResult);
+            loginCenter.setConfConfigInfo(confConfigInfo);
+        }
+        loginAllService(firewallMode);
+
         if (tupLoginOptResult == null || loginSmcAuthorizeResult == null)
         {
             if (null == tupLoginOptResult) {
@@ -289,12 +296,6 @@ class AuthEventAdapt implements TupLoginNotify {
             loginStatusNotify.onLoginEventNotify(LoginEvent.LOGIN_E_EVT_AUTH_SUCCESS, loginResult, loginStatus);
 
         }
-        //获取会议相关的配置信息
-        if (TupMgr.getInstance().getFeatureMgr().isSupportAudioAndVideoConf()) {
-            ConfConfigInfo confConfigInfo = loginCenter.getConfAccountInfoFromAuthResult(loginSmcAuthorizeResult);
-            loginCenter.setConfConfigInfo(confConfigInfo);
-        }
-        loginAllService(firewallMode);
         return;
     }
 

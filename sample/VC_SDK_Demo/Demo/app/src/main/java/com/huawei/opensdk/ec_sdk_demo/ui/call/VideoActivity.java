@@ -74,6 +74,7 @@ public class VideoActivity extends MVPBaseActivity<IVideoCallContract.VideoCallB
     private CallInfo mCallInfo;
     private int mCallID;
     private Object thisVideoActivity = this;
+    private int changeNumber = 0;
 
     private Handler mHandler = new Handler()
     {
@@ -144,6 +145,7 @@ public class VideoActivity extends MVPBaseActivity<IVideoCallContract.VideoCallB
         mVideoSpeakerArea.setOnClickListener(this);
         mPlateBtn.setOnClickListener(this);
         mCloseArea.setOnClickListener(this);
+        mLocalView.setOnClickListener(this);
 
         mLocalView.setVisibility(View.VISIBLE);
         mPlateControl = new SecondDialPlateControl(mPlateArea, this.mCallID);
@@ -334,6 +336,9 @@ public class VideoActivity extends MVPBaseActivity<IVideoCallContract.VideoCallB
             case R.id.hide_dial_btn:
                 mPlateControl.hideDialPlate();
                 break;
+            case R.id.local_video:
+                changeShowView();
+                break;
             default:
                 break;
         }
@@ -372,5 +377,25 @@ public class VideoActivity extends MVPBaseActivity<IVideoCallContract.VideoCallB
     public void setTime(String time)
     {
         mShowTimeView.setText(time);
+    }
+
+    /**
+     * 视频画面切换功能
+     */
+    private void changeShowView(){
+        mRemoteView.removeAllViews();
+        mLocalView.removeAllViews();
+        changeNumber++;
+        if(changeNumber%2 == 0){
+            mPresenter.getRemoteVideoView().setZOrderMediaOverlay(false);
+            mPresenter.getLocalVideoView().setZOrderMediaOverlay(true);
+            addSurfaceView(mRemoteView, mPresenter.getRemoteVideoView());
+            addSurfaceView(mLocalView, mPresenter.getLocalVideoView());
+        }else {
+            mPresenter.getRemoteVideoView().setZOrderMediaOverlay(true);
+            mPresenter.getLocalVideoView().setZOrderMediaOverlay(false);
+            addSurfaceView(mLocalView, mPresenter.getRemoteVideoView());
+            addSurfaceView(mRemoteView, mPresenter.getLocalVideoView());
+        }
     }
 }

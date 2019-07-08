@@ -18,9 +18,11 @@ import com.huawei.tupcontacts.TupContactsManager;
 
 import java.io.File;
 
+import common.HdacceleType;
 import common.ReInviteNoSdpReplyMode;
 import common.TupBool;
 import common.TupCallParam;
+import object.HdacceleRate;
 import object.TupCallCfgAudioVideo;
 import object.TupCallCfgBFCP;
 import object.TupCallCfgMedia;
@@ -523,7 +525,13 @@ public class TupMgr
         tupCallCfgAudioVideo.setVideoArs(1, 1, 0, 1, 1, 1);
 
         // 设置支持硬编，需要根据设备是否支持来设置
-        //tupCallCfgAudioVideo.setVideoHdaccelerate(videoHdacceleRate);
+        HdacceleRate hdacceleRate = new HdacceleRate();
+
+        hdacceleRate.setDecode(HdacceleType.Other);
+
+        hdacceleRate.setEncode(HdacceleType.Hard);
+
+        tupCallCfgAudioVideo.setVideoHdaccelerate(hdacceleRate);
 
         this.callManagerIns.setCfgAudioAndVideo(tupCallCfgAudioVideo);
 
@@ -542,6 +550,7 @@ public class TupMgr
         tupCallCfgSIP.setSipSupport100rel(TupBool.TUP_TRUE);
         tupCallCfgSIP.setEnableLogOut(TupBool.TUP_TRUE);
         tupCallCfgSIP.setReInviteNoSDPReplyMode(ReInviteNoSdpReplyMode.CALL_E_REINVITE_NOSDP_REPLY_STARTCALL_CAP);
+        tupCallCfgSIP.setSipRejectType(2);
 
         this.callManagerIns.setCfgSIP(tupCallCfgSIP);
     }

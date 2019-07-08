@@ -20,9 +20,9 @@ public final class LogUtil
 {
 
     public static final String CHARSET_UTF_8 = "UTF-8";
-    public static final String DEMO_LOG = "ECSDKDemo";
-    public static final String DEMO_LOG_FILE_NAME = "ECSDKDemo.log";
-    private static final String TAG = "ECSDKDemo";
+    public static final String DEMO_LOG = "VCSDKDemo";
+    public static final String DEMO_LOG_FILE_NAME = "VCSDKDemo.log";
+    private static final String TAG = "VCSDKDemo";
     private static String format = "yyyy-MM-dd HH:mm:ss.SSS";
     private static double logFileSize = 1024.00 * 1024.00 * 5;
     private static boolean isLog = true;

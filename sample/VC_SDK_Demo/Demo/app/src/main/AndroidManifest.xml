@@ -111,7 +111,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.conference.ConfManagerActivity"
-            android:screenOrientation="portrait">
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="sensor">
             <intent-filter>
                 <action android:name="android.intent.action.conf_manager_activity"/>
 
@@ -149,7 +150,8 @@
 
         <activity android:name=".ui.conference.VideoConfActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape">
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="sensor">
             <intent-filter>
                 <action android:name="android.intent.action.conf_video_activity"/>
 
@@ -163,6 +165,18 @@
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.conf_data_activity"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.sdkdemo"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.conference.ConfMemberListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.attendee_list_activity"/>
 
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.sdkdemo"/>
